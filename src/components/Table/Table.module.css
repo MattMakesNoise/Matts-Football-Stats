@@ -1,0 +1,74 @@
+.table {
+    background-color: #efefef;
+    color: black;
+    width: 60%;
+    border: 2px solid grey;
+    border-radius: 1rem;
+}
+
+.tableHead {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 1rem 0;
+}
+
+.teamWrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: auto;
+    padding: .75rem 0;
+    border-top: 1px solid grey;
+}
+.teamWrap:nth-child(even) {
+    background-color: #cdcdcd;
+}
+
+.position,
+.teamName,
+.played,
+.won,
+.drawn,
+.lost,
+.goalsFor,
+.goalsAgainst,
+.goalDifference,
+.points,
+.form {
+    text-align: left;
+}
+.position {
+    width: 3%;
+}
+.teamName {
+    width: 20%;
+    
+}
+.played {
+    width: 5%;
+}
+.won {
+    width: 3%;
+}
+.drawn {
+    width: 3%;
+}
+.lost {
+    width: 3%;
+}
+.goalsFor {
+    width: 3%;
+}
+.goalsAgainst {
+    width: 3%;
+}
+.goalDifference {
+    width: 3%;
+}
+.points {
+    width: 3%;
+}
+.form {
+    width: 10%;
+}

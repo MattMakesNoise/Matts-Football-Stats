@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
+import { render } from 'react-dom';
 import './App.css';
+import Header from "./components/header/Header";
+import Carousel from './components/Carousel/Carousel';
+import Table from './components/Table/Table';
+import Stats from './components/Stats/Stats';
+import Footer from './components/Footer/Footer';
+import Apicall from './components/api/Apicall';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        {/* <Apicall /> */}
+        <div className="App-body">
+          <Carousel />
+          <Table />
+          <Stats />
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
