@@ -1,7 +1,8 @@
 .table {
     background-color: #efefef;
     color: black;
-    width: 60%;
+    width: 45%;
+    margin: auto;
     border: 2px solid grey;
     border-radius: 1rem;
 }
@@ -34,8 +35,7 @@
 .goalsFor,
 .goalsAgainst,
 .goalDifference,
-.points,
-.form {
+.points {
     text-align: left;
 }
 .position {
@@ -68,7 +68,4 @@
 }
 .points {
     width: 3%;
-}
-.form {
-    width: 10%;
 }

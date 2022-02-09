@@ -1,7 +1,4 @@
 import React from "react";
-import styles from "./Carousel.module.css";
-
-
 
 class Carousel extends React.Component {
     render() {
