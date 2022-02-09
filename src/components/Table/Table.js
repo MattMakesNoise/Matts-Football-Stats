@@ -11,7 +11,7 @@ const Table = (props) => {
 
     if(data) {
         localStorage.setItem("apiDataStandings", JSON.stringify(data.standings[0].table));
-        console.log(data.standings[0].table);
+        // console.log(data.standings[0].table);
     }
     standings = JSON.parse(localStorage.getItem("apiDataStandings"));
     return (

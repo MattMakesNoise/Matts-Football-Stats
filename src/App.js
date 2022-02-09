@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Header from "./components/header/Header";
-import Carousel from './components/Carousel/Carousel';
+import Header from "./components/Header/Header";
+import TeamBanner from './components/TeamBanner/TeamBanner';
 import Table from './components/Table/Table';
 import Stats from './components/Stats/Stats';
 import Footer from './components/Footer/Footer';
@@ -14,10 +14,10 @@ class App extends React.Component {
       <div className="App">
         <Header />
         <div className="App-body">
-          <Carousel />
+          <TeamBanner teamname="Norwich City"/>
           <div className='TableStats-wrapper'>
-          <Table />
-          <Stats />
+            <Table />
+            <Stats />
           </div>
         </div>
         <Footer />

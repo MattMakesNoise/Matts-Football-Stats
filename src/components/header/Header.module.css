@@ -6,6 +6,7 @@ header {
     padding: 1rem;
 }
 
-h2 {
+.teamName {
     font-size: 2rem;
 }
+
