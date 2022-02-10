@@ -39,33 +39,34 @@
     text-align: left;
 }
 .position {
-    width: 3%;
+    width: 5%;
+    margin-left: 1rem;
 }
 .teamName {
-    width: 20%;
+    width: 28%;
     
 }
 .played {
-    width: 5%;
+    width: 8%;
 }
 .won {
-    width: 3%;
+    width: 8%;
 }
 .drawn {
-    width: 3%;
+    width: 8%;
 }
 .lost {
-    width: 3%;
+    width: 8%;
 }
 .goalsFor {
-    width: 3%;
+    width: 8%;
 }
 .goalsAgainst {
-    width: 3%;
+    width: 8%;
 }
 .goalDifference {
-    width: 3%;
+    width: 8%;
 }
 .points {
-    width: 3%;
+    width: 8%;
 }

@@ -1,9 +1,9 @@
 import React from "react";
-import useFetch from "../../useFetch";
+import useFetchTeams from "../Fetches/useFetchTeams";
 import styles from "./Stats.module.css"
 
 const Stats = (props) => {
-    const {data, loading, error} = useFetch("http://api.football-data.org/v2/competitions/68/teams");
+    const {data, loading, error} = useFetchTeams("http://api.football-data.org/v2/competitions/68/teams");
     let team;
     if(loading) return <div>Loading...</div>;
 

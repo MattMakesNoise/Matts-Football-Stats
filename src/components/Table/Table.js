@@ -1,16 +1,16 @@
 import React from "react";
-import useFetch from "../../useFetch";
+import useFetchTable from "../Fetches/useFetchTable";
 import styles from "./Table.module.css";
 
 const Table = (props) => {
-    const {data, loading, error} = useFetch("http://api.football-data.org/v2/competitions/2021/standings");
+    const {dataTable, loadingTable, errorTable} = useFetchTable("http://api.football-data.org/v2/competitions/2021/standings");
     let standings;
-    if(loading) return <div>Loading...</div>;
+    if(loadingTable) return <div>Loading...</div>;
 
-    if(error) console.log(error);
+    if(errorTable) console.log(errorTable);
 
-    if(data) {
-        localStorage.setItem("apiDataStandings", JSON.stringify(data.standings[0].table));
+    if(dataTable) {
+        localStorage.setItem("apiDataStandings", JSON.stringify(dataTable.standings[0].table));
         // console.log(data.standings[0].table);
     }
     standings = JSON.parse(localStorage.getItem("apiDataStandings"));
@@ -34,7 +34,7 @@ const Table = (props) => {
                 return (
                     <div className={styles.teamWrap}>
                         <div className={styles.position}>{(i+1)}</div>
-                        <div className={styles.teamName}>{stand.team.name}</div>
+                        <div className={styles.teamName}>{stand.team.name.slice(0, -2)}</div>
                         <div className={styles.played}>{stand.playedGames}</div>
                         <div className={styles.won}>{stand.won}</div>
                         <div className={styles.drawn}>{stand.draw}</div>
