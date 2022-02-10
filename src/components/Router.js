@@ -1,9 +1,17 @@
-import {BrowserRouter, Route, Switch} from "react-dom";
+import React from 'react';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import TeamPicker from './TeamPicker/TeamPicker';
+import App from '../App';
+import NotFound from './NotFound/NotFound';
 
-const Router = () => {
-    <BrowserRouter>
-        <Switch>
+const Rout = () => (
+    <Router>
+        <Routes>
             <Route exact path="/" component={TeamPicker}/>
-        </Switch>
-    </BrowserRouter>
-}
+            <Route path="/team/:teamId" component={App}/>
+            <Route component={NotFound}/>
+        </Routes>
+    </Router>
+)
+
+export default Rout;

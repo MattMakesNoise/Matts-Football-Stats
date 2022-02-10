@@ -2,19 +2,19 @@ import React from "react";
 import styles from "./Header.module.css";
 
 class Header extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {value: 57};
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {value: 57};
+    // }
 
-    handleChange = (e) => {
-        this.setState({value: e.target.value});
-    }
+    // handleChange = (e) => {
+    //     this.setState({value: e.target.value});
+    // }
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(this.state.value);
-    }
+    // handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     console.log(this.state.value);
+    // }
      
     render() {
         return (
@@ -22,7 +22,7 @@ class Header extends React.Component {
                 <div className="styles.logo">
                     <h1>Matts Football Stats</h1>
                 </div>
-                <form onSubmit={this.handleSubmit}>
+                {/* <form onSubmit={this.handleSubmit}>
                     <label>
                         Choose your team
                         <select value={this.state.value} onChange={this.handleChange}>
@@ -49,7 +49,7 @@ class Header extends React.Component {
                         </select>
                     </label>
                     <input type="submit" value="Submit"/>
-                </form>
+                </form> */}
             </header>
         )
     }
