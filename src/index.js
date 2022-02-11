@@ -12,7 +12,7 @@ render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<TeamPicker />}/>
-      <Route path="/team/:teamId" element={<App />}/>
+      <Route path="/team/:teamName" element={<App />}/>
       <Route path="*" element={<NotFound />}/>
     </Routes>
   </BrowserRouter>,
