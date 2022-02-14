@@ -5,8 +5,8 @@ class Header extends React.Component {
     render() {
         return (
             <header>
-                <div className="styles.logo">
-                    <h1>Matts Football Stats</h1>
+                <div className={styles.logo}>
+                    <img src="../../logos_white_16x9.png"></img>
                 </div>
             </header>
         )

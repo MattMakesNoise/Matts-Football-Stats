@@ -1,5 +1,5 @@
 header {
-    background-color: #efefef;
+    background-color: #132257;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -8,5 +8,10 @@ header {
 
 .teamName {
     font-size: 2rem;
+}
+
+.logo img {
+    height: 100px;
+    width: auto;
 }
 

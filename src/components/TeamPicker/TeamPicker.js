@@ -5,10 +5,9 @@ import useFetchTeams from "../Fetches/useFetchTeams";
 import Header from "../Header/Header";
 import styles from "./TeamPicker.module.css";
 
-const TeamPicker = (props) => {
+const TeamPicker = () => {
     const navigate = useNavigate();
     const [teamState, setTeamState] = useState(57);
-    let chosenTeamId;
     const pickTeam = (newTeam) => {
         setTeamState(newTeam);
     }
@@ -25,28 +24,19 @@ const TeamPicker = (props) => {
     fetchedTeams = JSON.parse(localStorage.getItem("apiTeams"));
     const eplTeamIds = [57, 58, 402, 397, 328, 61, 354, 62, 341, 338, 64, 65, 66, 67, 68, 340, 73, 346, 563, 76];
     const eplTeams = fetchedTeams.filter(({id}) => eplTeamIds.includes(id));
-    // console.log(teamState);
-    // let teamName;
-    // for(let i = 0; i < eplTeams.length; i++) {
-    //     if(teamState === eplTeams[i].id) {
-    //         teamName = eplTeams[i].name.slice(0, -2);
-    //     }
-    // }
-
+    // console.log(eplTeams);
     const goToTeam = (e) => {
         //1. Stop for submitting
         e.preventDefault();
-        const formData = new FormData(e.target);
-        console.log(formData);
         //2. Get the team name => look through eplTeams array and if value from select = objects id pull the team name
         let teamName;
         for(let i = 0; i < eplTeams.length; i++) {
             if(+teamState === eplTeams[i].id) {
-                teamName = eplTeams[i].name.slice(0, -2);
+                teamName = eplTeams[i].shortName;
             }
         }
         //3. Change the page to /team/whatever-team-was-chosen using push state
-        navigate(`/team/${teamName}`);
+        navigate(`/teams/${teamName}`);
         console.log(teamName);
     }
     
@@ -83,8 +73,8 @@ const TeamPicker = (props) => {
                             </select>
                             <button type="submit">Go to team!</button>
                         </form>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
     );

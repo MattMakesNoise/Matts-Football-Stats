@@ -7,24 +7,18 @@ import App from './App';
 import NotFound from './components/NotFound/NotFound';
 import reportWebVitals from './reportWebVitals';
 
+
 const rootElement = document.getElementById('root');
 render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<TeamPicker />}/>
-      <Route path="/team/:teamName" element={<App />}/>
+      <Route path="/teams/:teamName" element={<App />}/>
       <Route path="*" element={<NotFound />}/>
     </Routes>
   </BrowserRouter>,
   rootElement
 );
-
-// ReactDOM.render(
-//   <BrowserRouter>
-//     <Rout />
-//   </BrowserRouter>,
-//   document.getElementById('root')
-// );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

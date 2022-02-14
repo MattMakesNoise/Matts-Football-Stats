@@ -2,7 +2,7 @@ import React from "react";
 import useFetchTable from "../Fetches/useFetchTable";
 import styles from "./Table.module.css";
 
-const Table = (props) => {
+const Table = () => {
     const {dataTable, loadingTable, errorTable} = useFetchTable("http://api.football-data.org/v2/competitions/2021/standings");
     let standings;
     if(loadingTable) return <div>Loading...</div>;
