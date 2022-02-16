@@ -8,8 +8,10 @@ import styles from "./TeamPicker.module.css";
 const TeamPicker = () => {
     const navigate = useNavigate();
     const [teamState, setTeamState] = useState(57);
+    const [teamIdFixtureState, setteamIdFixtureState] = useState(42);
     const pickTeam = (newTeam) => {
         setTeamState(newTeam);
+        setteamIdFixtureState(newTeam);
     }
 
     const {dataTeams, loadingTeams, errorTeams} = useFetchTeams("http://api.football-data.org/v2/teams");
@@ -24,7 +26,7 @@ const TeamPicker = () => {
     fetchedTeams = JSON.parse(localStorage.getItem("apiTeams"));
     const eplTeamIds = [57, 58, 402, 397, 328, 61, 354, 62, 341, 338, 64, 65, 66, 67, 68, 340, 73, 346, 563, 76];
     const eplTeams = fetchedTeams.filter(({id}) => eplTeamIds.includes(id));
-    // console.log(eplTeams);
+    console.log(eplTeams);
     const goToTeam = (e) => {
         //1. Stop for submitting
         e.preventDefault();
@@ -33,6 +35,8 @@ const TeamPicker = () => {
         for(let i = 0; i < eplTeams.length; i++) {
             if(+teamState === eplTeams[i].id) {
                 teamName = eplTeams[i].shortName;
+                let teamId = eplTeamIds[i];
+                console.log(teamId); 
             }
         }
         //3. Change the page to /team/whatever-team-was-chosen using push state
@@ -49,7 +53,7 @@ const TeamPicker = () => {
                     <div className={styles.teamPickWrap}>
                         <h2>Pick A Team</h2>
                         <form action="" onSubmit={(e) => goToTeam(e)}>
-                            <select onChange={(e) => {console.log(e.target.value); pickTeam(e.target.value)}} value={teamState}>
+                            <select onChange={(e) => {pickTeam(e.target.value)}} value={teamState}>
                                 <option value={57}>Arsenal</option>
                                 <option value={58}>Aston Villa</option>
                                 <option value={402}>Brentford</option>

@@ -1,9 +1,19 @@
 import React from "react";
-import useFetchTeams from "../Fetches/useFetchTeams";
+import useFetchTeamsTwo from "../Fetches/useFetchTeamsTwo";
 import styles from "./Stats.module.css"
 
 const Stats = (props) => {
-    
+    // const {dataTeamsTwo, loadingTeamsTwo, errorTeamsTwo} = useFetchTeamsTwo("https://api-football-v1.p.rapidapi.com/v3/teams/statistics");
+    // let standings;
+    // if(loadingTeamsTwo) return <div>Loading...</div>;
+
+    // if(errorTeamsTwo) console.log(errorTeamsTwo);
+
+    // if(dataTeamsTwo) {
+    //     // localStorage.setItem("apiDataStandings", JSON.stringify(dataTeamsTwo.standings[0].table));
+    //     console.log(dataTeamsTwo);
+    // }
+    // standings = JSON.parse(localStorage.getItem("apiDataStandings"));
     return (
         <section className={styles.statsWrapper}>
             

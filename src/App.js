@@ -12,6 +12,9 @@ const App = (props) => {
 
   let fetchedTeams = JSON.parse(localStorage.getItem("apiTeams"));
   const eplTeamIds = [57, 58, 402, 397, 328, 61, 354, 62, 341, 338, 64, 65, 66, 67, 68, 340, 73, 346, 563, 76];
+  // const fixturesIds = {
+
+  // }
   const eplTeams = fetchedTeams.filter(({id}) => eplTeamIds.includes(id));
 
   let teamObject;
@@ -19,7 +22,6 @@ const App = (props) => {
   for(let i = 0; i < eplTeams.length; i++) {
     if(team.teamName === eplTeams[i].shortName) {
       teamObject = eplTeams[i];
-      console.log(teamObject);
     }
   }
 
@@ -28,7 +30,10 @@ const App = (props) => {
     <div className="App">
       <Header />
       <div className="App-body">
-        <TeamBanner name={team.teamName}/>
+        <TeamBanner 
+          name={team.teamName}
+          // fixturesId={}
+        />
         <div className='TableStats-wrapper'>
           <Table />
           <Stats 
