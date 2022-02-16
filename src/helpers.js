@@ -43,3 +43,18 @@ export const teamIdsFixtures = {
     WestHam: 48,
     Wolves: 39
 }
+
+export function formatDate(value) {
+    let date = new Date(value);
+    const day = date.toLocaleString('default', { day: '2-digit' });
+    const month = date.toLocaleString('default', { month: 'short' });
+    const year = date.toLocaleString('default', { year: 'numeric' });
+    return day + ' ' + month + ' ' + year;
+}
+
+export function formatTime(value) {
+    let time = new Date(value);
+    const hour = time.toLocaleTimeString('en-GB', {hour: '2-digit', minute: '2-digit'});
+    // const minute = time.toLocaleTimeString('en-GB', { minute: '2-digit' });
+    return hour;
+}

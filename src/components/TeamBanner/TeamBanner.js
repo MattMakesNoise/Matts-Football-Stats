@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import {teamIdsFixtures} from "../../helpers";
+import {teamIdsFixtures, formatDate, formatTime} from "../../helpers";
 import styles from "./TeamBanner.module.css";
 
 const TeamBanner = (props) => { 
@@ -48,6 +48,31 @@ const TeamBanner = (props) => {
         <section className={styles.teamBanner}>
             <div>
                 <h2 className={styles.teamName}>{props.name}</h2>
+            </div>
+            <div className={styles.cardCarouselWrapper}>
+                {teamsFixtures.map((fixture) => {
+                    return (
+                        <div className={styles.cardWrap}>
+                            <div className={styles.homeWrap}>
+                                <img src={`${fixture.teams.home.logo}`} alt="team crest"></img>
+                                <div>{fixture.teams.home.name}</div>
+                                {fixture.score.fulltime.home !== null 
+                                    ? <div>{`${fixture.score.fulltime.home}`}</div>
+                                    : <div>{formatDate(fixture.fixture.date)}</div>
+                                }
+                            </div>
+                            <div className={styles.awayWrap}>
+                                <img src={`${fixture.teams.away.logo}`} alt="team crest"></img>
+                                <div>{fixture.teams.away.name}</div>
+                                {fixture.score.fulltime.away !== null 
+                                    ? <div>{`${fixture.score.fulltime.away}`}</div>
+                                    : <div>{formatTime(fixture.fixture.date)}</div>
+                                }
+                            </div>
+
+                        </div>
+                    )
+                })}
             </div>
         </section>
     )
