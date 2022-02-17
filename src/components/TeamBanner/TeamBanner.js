@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import {teamIdsFixtures, formatDate, formatTime} from "../../helpers";
 import '../css/TeamBanner.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import {motion} from 'framer-motion';
 
 const TeamBanner = (props) => { 
+    const [width, setWidth] = useState(0);
+    const carousel = useRef();
+
+    useEffect(() => {
+        // console.log(carousel.current.scrollWidth, carousel.current.offsetWidth);
+        setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+    }, []);
+
     const arrowLeft = <FontAwesomeIcon icon={faAngleLeft} />;
     const arrowRight = <FontAwesomeIcon icon={faAngleRight} />;
     const fixtures = JSON.parse(localStorage.getItem("apiDataFixtures"));
@@ -31,44 +40,40 @@ const TeamBanner = (props) => {
             <div>
                 <h2 className="teamName">{props.name}</h2>
             </div>
-            <div className="carouselOuter">
-                <button className="carouselButton carouselButton-left">{arrowLeft}</button>
-                <div className="carouselInner">
-                    <div className="carouselTrack">
-                        {teamsFixtures.map((fixture) => {
-                            return (
-                                <div className="carouselSlide">
-                                    <div className="homeWrap">
-                                        <div className="crestWrap">
-                                            <img src={`${fixture.teams.home.logo}`} alt="team crest" className="teamCrest"></img>
-                                        </div>
-                                        <div className="nameWrap">{fixture.teams.home.name}</div>
-                                        <div className="scoredateHome">
-                                            {fixture.score.fulltime.home !== null 
-                                                ? <div>{`${fixture.score.fulltime.home}`}</div>
-                                                : <div>{formatDate(fixture.fixture.date)}</div>
-                                            }
-                                        </div>
+            <motion.div className="carouselOuter" ref={carousel} whileTap={{cursor: "grabbing"}}>
+                <motion.div className="carouselInner" drag="x" dragConstraints={{right: 0, left: -width}}>
+                    {teamsFixtures.map((fixture) => {
+                        return (
+                            <motion.div className="carouselSlide">
+                                <div className="homeWrap">
+                                    <div className="crestWrap">
+                                        <img src={`${fixture.teams.home.logo}`} alt="team crest" className="teamCrest"></img>
                                     </div>
-                                    <div className="awayWrap">
-                                        <div className="crestWrap">
-                                            <img src={`${fixture.teams.away.logo}`} alt="team crest" className="teamCrest"></img>
-                                        </div>
-                                        <div className="nameWrap">{fixture.teams.away.name}</div>
-                                        <div className="scoredateAway">
-                                            {fixture.score.fulltime.away !== null 
-                                                ? <div>{`${fixture.score.fulltime.away}`}</div>
-                                                : <div>{formatTime(fixture.fixture.date)}</div>
-                                            }
-                                        </div>
+                                    <div className="nameWrap">{fixture.teams.home.name}</div>
+                                    <div className="scoredateHome">
+                                        {fixture.score.fulltime.home !== null 
+                                            ? <div>{`${fixture.score.fulltime.home}`}</div>
+                                            : <div>{formatDate(fixture.fixture.date)}</div>
+                                        }
                                     </div>
                                 </div>
-                            )
-                        })}
-                    </div>
-                </div>
-                <button className="carouselButton carouselButton-right">{arrowRight}</button>
-            </div>
+                                <div className="awayWrap">
+                                    <div className="crestWrap">
+                                        <img src={`${fixture.teams.away.logo}`} alt="team crest" className="teamCrest"></img>
+                                    </div>
+                                    <div className="nameWrap">{fixture.teams.away.name}</div>
+                                    <div className="scoredateAway">
+                                        {fixture.score.fulltime.away !== null 
+                                            ? <div>{`${fixture.score.fulltime.away}`}</div>
+                                            : <div>{formatTime(fixture.fixture.date)}</div>
+                                        }
+                                    </div>
+                                </div>
+                            </motion.div>
+                        )
+                    })}
+                </motion.div>
+            </motion.div>
         </section>
     )
 }

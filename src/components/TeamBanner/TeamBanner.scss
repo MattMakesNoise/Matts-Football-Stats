@@ -9,19 +9,16 @@
     background-color: #efefef;
     margin: 0 auto;
     padding: 1rem;
+    cursor: grab;
+    overflow: hidden;
     .carouselInner {
+        display: flex;
         height: 100%;
         width: 90%;
-        .carouselTrack {
-            display: flex;
-        }
     }
 }
 
 .carouselSlide {
-    position: absolute;
-    top: 0;
-    bottom: 0;
     width: 20%;
     background-color: #eee;
     color: black;
@@ -30,22 +27,23 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     margin: 0 .5rem;
     padding: .5rem 1rem;
+    .homeWrap,
+    .awayWrap {
+        display: flex;
+        justify-content: space-between;
+    }
+    .homeWrap {
+        padding-bottom: .5rem;
+        border-bottom: 2px solid #cdcdcd;
+    }
+    .awayWrap {
+        padding-top: .5rem;
+    }
 }
 
-.homeWrap,
-.awayWrap {
-    display: flex;
-    justify-content: space-between;
-}
 
-.homeWrap {
-    padding-bottom: .5rem;
-    border-bottom: 2px solid #cdcdcd;
-}
 
-.awayWrap {
-    padding-top: .5rem;
-}
+
 
 .crestWrap {
     padding: 1rem;
@@ -71,26 +69,4 @@
     justify-self: flex-end;
     align-items: center;
     margin-left: 1rem;
-}
-
-.carouselButton {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #cdcdcd;
-    border: 0;
-    border-radius: 5px;
-    padding: .5rem;
-    cursor: pointer;
-    svg {
-        height: 25px;
-    }
-}
-
-.carouselButton-left {
-    left: 25px;
-}
-
-.carouselButton-right {
-    right: 25px;
 }

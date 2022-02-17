@@ -9,23 +9,20 @@
   background-color: #efefef;
   margin: 0 auto;
   padding: 1rem;
+  cursor: -webkit-grab;
+  cursor: grab;
+  overflow: hidden;
 }
 
 .carouselOuter .carouselInner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   height: 100%;
   width: 90%;
 }
 
-.carouselOuter .carouselInner .carouselTrack {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .carouselSlide {
-  position: absolute;
-  top: 0;
-  bottom: 0;
   width: 20%;
   background-color: #eee;
   color: black;
@@ -37,8 +34,8 @@
   padding: .5rem 1rem;
 }
 
-.homeWrap,
-.awayWrap {
+.carouselSlide .homeWrap,
+.carouselSlide .awayWrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -47,12 +44,12 @@
           justify-content: space-between;
 }
 
-.homeWrap {
+.carouselSlide .homeWrap {
   padding-bottom: .5rem;
   border-bottom: 2px solid #cdcdcd;
 }
 
-.awayWrap {
+.carouselSlide .awayWrap {
   padding-top: .5rem;
 }
 
@@ -97,29 +94,5 @@
       -ms-flex-align: center;
           align-items: center;
   margin-left: 1rem;
-}
-
-.carouselButton {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  background-color: #cdcdcd;
-  border: 0;
-  border-radius: 5px;
-  padding: .5rem;
-  cursor: pointer;
-}
-
-.carouselButton svg {
-  height: 25px;
-}
-
-.carouselButton-left {
-  left: 25px;
-}
-
-.carouselButton-right {
-  right: 25px;
 }
 /*# sourceMappingURL=TeamBanner.css.map */
