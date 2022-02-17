@@ -5,27 +5,28 @@
 }
 
 .carouselOuter {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 90%;
+  width: 100%;
   background-color: #efefef;
+  margin: 0 auto;
   padding: 1rem;
 }
 
 .carouselOuter .carouselInner {
   height: 100%;
-  width: 100%;
+  width: 90%;
 }
 
-.carouselSlide {
+.carouselOuter .carouselInner .carouselTrack {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+}
+
+.carouselSlide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20%;
   background-color: #eee;
   color: black;
   border: 2px solid #eee;
@@ -68,7 +69,7 @@
           align-items: center;
 }
 
-.teamCrest {
+.crestWrap .teamCrest {
   width: 50px;
   height: auto;
 }
@@ -96,5 +97,29 @@
       -ms-flex-align: center;
           align-items: center;
   margin-left: 1rem;
+}
+
+.carouselButton {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: #cdcdcd;
+  border: 0;
+  border-radius: 5px;
+  padding: .5rem;
+  cursor: pointer;
+}
+
+.carouselButton svg {
+  height: 25px;
+}
+
+.carouselButton-left {
+  left: 25px;
+}
+
+.carouselButton-right {
+  right: 25px;
 }
 /*# sourceMappingURL=TeamBanner.css.map */

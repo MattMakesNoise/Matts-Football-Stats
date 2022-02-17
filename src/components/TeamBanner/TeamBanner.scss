@@ -5,21 +5,24 @@
 }
 
 .carouselOuter {
-    display: flex;
-    width: 90%;
+    width: 100%;
     background-color: #efefef;
+    margin: 0 auto;
     padding: 1rem;
     .carouselInner {
         height: 100%;
-        width: 100%;
+        width: 90%;
+        .carouselTrack {
+            display: flex;
+        }
     }
 }
 
-
-
 .carouselSlide {
-    display: flex;
-    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20%;
     background-color: #eee;
     color: black;
     border: 2px solid #eee;
@@ -49,11 +52,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.teamCrest {
-    width: 50px;
-    height: auto;
+    .teamCrest {
+        width: 50px;
+        height: auto;
+    }
 }
 
 .nameWrap {
@@ -69,4 +71,26 @@
     justify-self: flex-end;
     align-items: center;
     margin-left: 1rem;
+}
+
+.carouselButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #cdcdcd;
+    border: 0;
+    border-radius: 5px;
+    padding: .5rem;
+    cursor: pointer;
+    svg {
+        height: 25px;
+    }
+}
+
+.carouselButton-left {
+    left: 25px;
+}
+
+.carouselButton-right {
+    right: 25px;
 }
