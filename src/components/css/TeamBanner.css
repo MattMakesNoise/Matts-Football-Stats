@@ -1,0 +1,100 @@
+.teamBanner {
+  padding: 2rem 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.carouselOuter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  background-color: #efefef;
+  padding: 1rem;
+}
+
+.carouselOuter .carouselInner {
+  height: 100%;
+  width: 100%;
+}
+
+.carouselSlide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #eee;
+  color: black;
+  border: 2px solid #eee;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 0 .5rem;
+  padding: .5rem 1rem;
+}
+
+.homeWrap,
+.awayWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.homeWrap {
+  padding-bottom: .5rem;
+  border-bottom: 2px solid #cdcdcd;
+}
+
+.awayWrap {
+  padding-top: .5rem;
+}
+
+.crestWrap {
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.teamCrest {
+  width: 50px;
+  height: auto;
+}
+
+.nameWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 1rem;
+}
+
+.scoredateHome,
+.scoredateAway {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-self: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 1rem;
+}
+/*# sourceMappingURL=TeamBanner.css.map */

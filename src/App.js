@@ -9,14 +9,9 @@ import Footer from './components/Footer/Footer';
 
 const App = (props) => {
   const team = useParams();
-
   let fetchedTeams = JSON.parse(localStorage.getItem("apiTeams"));
   const eplTeamIds = [57, 58, 402, 397, 328, 61, 354, 62, 341, 338, 64, 65, 66, 67, 68, 340, 73, 346, 563, 76];
-  // const fixturesIds = {
-
-  // }
   const eplTeams = fetchedTeams.filter(({id}) => eplTeamIds.includes(id));
-
   let teamObject;
 
   for(let i = 0; i < eplTeams.length; i++) {
@@ -24,7 +19,6 @@ const App = (props) => {
       teamObject = eplTeams[i];
     }
   }
-
 
   return (
     <div className="App">

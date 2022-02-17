@@ -55,6 +55,5 @@ export function formatDate(value) {
 export function formatTime(value) {
     let time = new Date(value);
     const hour = time.toLocaleTimeString('en-GB', {hour: '2-digit', minute: '2-digit'});
-    // const minute = time.toLocaleTimeString('en-GB', { minute: '2-digit' });
     return hour;
 }

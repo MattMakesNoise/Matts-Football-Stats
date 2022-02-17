@@ -11,7 +11,6 @@ const Table = () => {
 
     if(dataTable) {
         localStorage.setItem("apiDataStandings", JSON.stringify(dataTable.standings[0].table));
-        // console.log(data.standings[0].table);
     }
     standings = JSON.parse(localStorage.getItem("apiDataStandings"));
     return (

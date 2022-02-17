@@ -1,0 +1,72 @@
+.teamBanner {
+    padding: 2rem 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.carouselOuter {
+    display: flex;
+    width: 90%;
+    background-color: #efefef;
+    padding: 1rem;
+    .carouselInner {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+
+
+.carouselSlide {
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+    color: black;
+    border: 2px solid #eee;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: 0 .5rem;
+    padding: .5rem 1rem;
+}
+
+.homeWrap,
+.awayWrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.homeWrap {
+    padding-bottom: .5rem;
+    border-bottom: 2px solid #cdcdcd;
+}
+
+.awayWrap {
+    padding-top: .5rem;
+}
+
+.crestWrap {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.teamCrest {
+    width: 50px;
+    height: auto;
+}
+
+.nameWrap {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.scoredateHome,
+.scoredateAway {
+    display: flex;
+    justify-self: flex-end;
+    align-items: center;
+    margin-left: 1rem;
+}

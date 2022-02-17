@@ -18,8 +18,8 @@ const TeamBanner = (props) => {
     const teamsFixtures = [];
 
     for(let i = 0; i < fixtures.length; i++) {
-        if(teamIdFixture === fixtures[i].teams.away.id || teamIdFixture === fixtures[i].teams.home.id) {
-            teamsFixtures.push(fixtures[i]);
+        if(teamIdFixture === fixtures.response[i].teams.away.id || teamIdFixture === fixtures.response[i].teams.home.id) {
+            teamsFixtures.push(fixtures.response[i]);
         }
     }
 
