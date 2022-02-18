@@ -1,12 +1,16 @@
 .teamBanner {
-  padding: 2rem 1rem;
-  width: 100%;
+  padding: 2rem 0;
+  width: 90%;
   height: 100%;
+  margin: auto;
 }
 
 .carouselOuter {
   width: 100%;
-  background-color: #efefef;
+  background-color: #F1F1E6;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 0 auto;
   padding: 1rem;
   cursor: -webkit-grab;
@@ -24,9 +28,9 @@
 
 .carouselSlide {
   width: 20%;
-  background-color: #eee;
-  color: black;
-  border: 2px solid #eee;
+  background-color: #F1F1E6;
+  color: #504F54;
+  border: 2px solid #F1F1E6;
   border-radius: 5px;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);

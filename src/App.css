@@ -3,11 +3,14 @@
 }
 
 .App-body {
-  background-color: #282c34;
+  /* background-color: #282c34; */
+  background-color: #cdcdcd;
   min-height: 100vh;
   font-size: 1rem;
   color: white;
 }
 .TableStats-wrapper {
   display: flex;
+  width: 90%;
+  margin: auto;
 }

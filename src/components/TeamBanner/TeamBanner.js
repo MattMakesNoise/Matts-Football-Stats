@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
-import {teamIdsFixtures, formatDate, formatTime} from "../../helpers";
+import {teamIdsFixtures, formatDate, formatTime} from "../Helpers/helpers";
 import '../css/TeamBanner.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import {motion} from 'framer-motion';
 
 const TeamBanner = (props) => { 
@@ -10,12 +8,9 @@ const TeamBanner = (props) => {
     const carousel = useRef();
 
     useEffect(() => {
-        // console.log(carousel.current.scrollWidth, carousel.current.offsetWidth);
         setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
     }, []);
 
-    const arrowLeft = <FontAwesomeIcon icon={faAngleLeft} />;
-    const arrowRight = <FontAwesomeIcon icon={faAngleRight} />;
     const fixtures = JSON.parse(localStorage.getItem("apiDataFixtures"));
 
     let teamIdFixture;
@@ -37,9 +32,6 @@ const TeamBanner = (props) => {
 
     return (
         <section className="teamBanner">
-            <div>
-                <h2 className="teamName">{props.name}</h2>
-            </div>
             <motion.div className="carouselOuter" ref={carousel} whileTap={{cursor: "grabbing"}}>
                 <motion.div className="carouselInner" drag="x" dragConstraints={{right: 0, left: -width}}>
                     {teamsFixtures.map((fixture) => {

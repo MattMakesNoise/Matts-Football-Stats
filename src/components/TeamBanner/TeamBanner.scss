@@ -1,12 +1,16 @@
+@import "../Helpers/shared.scss";
+
 .teamBanner {
-    padding: 2rem 1rem;
-    width: 100%;
+    padding: 2rem 0;
+    width: 90%;
     height: 100%;
+    margin: auto;
 }
 
 .carouselOuter {
     width: 100%;
-    background-color: #efefef;
+    background-color: $nearly-white;
+    @include borders;
     margin: 0 auto;
     padding: 1rem;
     cursor: grab;
@@ -20,11 +24,10 @@
 
 .carouselSlide {
     width: 20%;
-    background-color: #eee;
-    color: black;
-    border: 2px solid #eee;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: $nearly-white;
+    color: $nearly-black;
+    border: 2px solid $nearly-white;
+    @include borders;
     margin: 0 .5rem;
     padding: .5rem 1rem;
     .homeWrap,
@@ -34,16 +37,12 @@
     }
     .homeWrap {
         padding-bottom: .5rem;
-        border-bottom: 2px solid #cdcdcd;
+        border-bottom: 2px solid $light-grey;
     }
     .awayWrap {
         padding-top: .5rem;
     }
 }
-
-
-
-
 
 .crestWrap {
     padding: 1rem;
