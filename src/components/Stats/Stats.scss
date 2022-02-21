@@ -34,4 +34,10 @@
     p {
         margin-bottom: 1rem;
     }
+    img {
+        width: 50%;
+        height: auto;
+        margin-bottom: 1rem;
+        @include borders;
+    }
 }

@@ -1,36 +1,22 @@
 import React, { useEffect, useState, useRef } from "react";
-import {teamIdsFixtures, formatDate, formatTime} from "../Helpers/helpers";
+import {formatDate, formatTime} from "../Helpers/helpers";
 import '../css/TeamBanner.css';
 import {motion} from 'framer-motion';
 
 const TeamBanner = (props) => { 
     const [width, setWidth] = useState(0);
     const carousel = useRef();
-
     useEffect(() => {
         setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
     }, []);
 
-    const fixtures = JSON.parse(localStorage.getItem("apiDataFixtures"));
-
-    let teamIdFixture;
-    let teamNameNoWhitespace = props.name.replace(/\s/g, "");
-
-    Object.entries(teamIdsFixtures).forEach(([key, value]) => {
-        if(key.slice(0, 5) === teamNameNoWhitespace.slice(0, 5)) {
-            teamIdFixture = value;
-        }
-    })
-    
+    const fixtures = props.fixtures;
     let teamsFixtures = [];
-
-    for(let i = 0; i < fixtures.response.length; i++) {
-        if(teamIdFixture === fixtures.response[i].teams.away.id || teamIdFixture === fixtures.response[i].teams.home.id) {
-            teamsFixtures.push(fixtures.response[i]);
+    for(let i = 0; i < fixtures.length; i++) {
+        if(props.team === fixtures[i].teams.home.name || props.team === fixtures[i].teams.away.name) {
+            teamsFixtures.push(fixtures[i]);
         }
     }
-    console.log(teamIdFixture)
-    
 
     return (
         <section className="teamBanner">
