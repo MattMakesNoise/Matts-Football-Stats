@@ -1,0 +1,58 @@
+@import "../Helpers/shared.scss";
+
+.table {
+    background-color: $nearly-white;
+    color: $nearly-black;
+    width: 50%;
+    margin: 1rem 1rem 1rem 0;
+    border: 2px solid $nearly-white;
+    @include borders;
+    .tableHead {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: 1rem 0;
+    }
+}
+
+.teamWrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: auto;
+    padding: .75rem 0;
+    border-top: 1px solid $light-grey;
+    .teamWrap:nth-child(even) {
+        background-color: $very-light-grey;
+    }
+}
+
+.position,
+.teamName,
+.played,
+.won,
+.drawn,
+.lost,
+.goalsFor,
+.goalsAgainst,
+.goalDifference,
+.points {
+    text-align: left;
+}
+.position {
+    width: 5%;
+    margin-left: 1rem;
+}
+.teamName {
+    width: 28%;
+}
+.played,
+.won,
+.drawn,
+.lost,
+.goalsFor,
+.goalsAgainst,
+.goalDifference,
+.points {
+    width: 8%;
+}

@@ -1,0 +1,26 @@
+//=============== COLOURS ===============//
+$nearly-black: #504F54;
+$dark-blue: #132257;
+$nearly-white: #F1F1E6;
+$very-light-grey: #efefef;
+$light-grey: #cdcdcd;
+
+//=============== MIXINS ===============//
+@mixin borders {
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+@mixin link {
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+//=============== BREAKPOINTS ==========//
+$break-xs: 575px;
+$break-s: 576px;
+$break-m: 768px;
+$break-lg: 992px;
+$break-xl: 1260px;
+$break-xxl: 1800px;

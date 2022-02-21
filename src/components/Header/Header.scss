@@ -1,0 +1,14 @@
+@import '../Helpers/shared.scss';
+
+header {
+    background-color: $dark-blue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+}
+
+.logo img {
+    height: 100px;
+    width: auto;
+}

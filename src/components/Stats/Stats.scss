@@ -1,0 +1,37 @@
+@import "../Helpers/shared.scss";
+
+.statsWrapper {
+    background-color: $nearly-white;
+    color: $nearly-black;
+    width: 50%;
+    margin: 1rem 0 1rem 1rem;
+    padding: 1rem;
+    border: 2px solid $nearly-white;
+    @include borders;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    a {
+        @include link;
+    }
+}
+
+.crestFounded {
+    display: flex;
+    flex-direction: column;
+    img {
+        width: 50%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+    h3 {
+        text-align: left;
+    }
+}
+
+.stadiumWebsite {
+    h3,
+    p {
+        margin-bottom: 1rem;
+    }
+}

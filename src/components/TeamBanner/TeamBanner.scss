@@ -1,0 +1,71 @@
+@import "../Helpers/shared.scss";
+
+.teamBanner {
+    padding: 2rem 0;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+}
+
+.carouselOuter {
+    width: 100%;
+    background-color: $nearly-white;
+    @include borders;
+    margin: 0 auto;
+    padding: 1rem;
+    cursor: grab;
+    overflow: hidden;
+    .carouselInner {
+        display: flex;
+        height: 100%;
+        width: 90%;
+    }
+}
+
+.carouselSlide {
+    width: 20%;
+    background-color: $nearly-white;
+    color: $nearly-black;
+    border: 2px solid $nearly-white;
+    @include borders;
+    margin: 0 .5rem;
+    padding: .5rem 1rem;
+    .homeWrap,
+    .awayWrap {
+        display: flex;
+        justify-content: space-between;
+    }
+    .homeWrap {
+        padding-bottom: .5rem;
+        border-bottom: 2px solid $light-grey;
+    }
+    .awayWrap {
+        padding-top: .5rem;
+    }
+}
+
+.crestWrap {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .teamCrest {
+        width: 50px;
+        height: auto;
+    }
+}
+
+.nameWrap {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.scoredateHome,
+.scoredateAway {
+    display: flex;
+    justify-self: flex-end;
+    align-items: center;
+    margin-left: 1rem;
+}

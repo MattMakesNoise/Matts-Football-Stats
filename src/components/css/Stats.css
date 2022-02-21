@@ -1,0 +1,53 @@
+.statsWrapper {
+  background-color: #F1F1E6;
+  color: #504F54;
+  width: 50%;
+  margin: 1rem 0 1rem 1rem;
+  padding: 1rem;
+  border: 2px solid #F1F1E6;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.statsWrapper a {
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.crestFounded {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.crestFounded img {
+  width: 50%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.crestFounded h3 {
+  text-align: left;
+}
+
+.stadiumWebsite h3,
+.stadiumWebsite p {
+  margin-bottom: 1rem;
+}
+/*# sourceMappingURL=Stats.css.map */
