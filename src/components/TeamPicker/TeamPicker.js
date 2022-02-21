@@ -1,26 +1,36 @@
 import React, { useState } from "react";
 import {useNavigate} from 'react-router-dom';
 import '../../App.css';
-import useFetchTeams from "../Fetches/useFetchTeams";
+import useFetch from "../Fetches/useFetch";
 import Header from "../Header/Header";
 import styles from "./TeamPicker.module.css";
 
 const TeamPicker = () => {
     const navigate = useNavigate();
+
     const [teamState, setTeamState] = useState(57);
     const [teamId, setTeamId] = useState(40);
     const pickTeam = (newTeam) => {
         setTeamState(newTeam);
     }
 
-    const {dataTeams, loadingTeams, errorTeams} = useFetchTeams("http://api.football-data.org/v2/teams");
+    const {dataTeamInfo, dataTable, dataFixtures, loading, error} = useFetch();
     let fetchedTeams;
-    if(loadingTeams) return <div>Loading...</div>;
+    if(loading) return <div>Loading...</div>;
 
-    if(errorTeams) console.log(errorTeams);
+    if(error) console.log(error);
 
-    if(dataTeams) {
-        localStorage.setItem("apiTeams", JSON.stringify(dataTeams.teams));
+    if(dataTeamInfo) {
+        console.log(dataTeamInfo.data.response)
+        localStorage.setItem("apiTeamInfo", JSON.stringify(dataTeamInfo.data.response));
+    }
+    if(dataTable) {
+        console.log(dataTable.data.response[0].league.standings)
+        localStorage.setItem("apiTable", JSON.stringify(dataTable.data.response[0].league.standings));
+    }
+    if(dataFixtures) {
+        console.log(dataFixtures.data.response)
+        localStorage.setItem("apiFixtures", JSON.stringify(dataFixtures.data.response));
     }
     fetchedTeams = JSON.parse(localStorage.getItem("apiTeams"));
     const eplTeamIds = [57, 58, 402, 397, 328, 61, 354, 62, 341, 338, 64, 65, 66, 67, 68, 340, 73, 346, 563, 76];
@@ -71,7 +81,7 @@ const TeamPicker = () => {
                                 <option value={563}>West Ham</option>
                                 <option value={76}>Wolves</option>
                             </select>
-                            <button type="submit" onClick={() => }>Go to team!</button>
+                            <button type="submit">Go to team!</button>
                         </form>
                     </div>
                 </div>
