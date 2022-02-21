@@ -8,10 +8,9 @@ import styles from "./TeamPicker.module.css";
 const TeamPicker = () => {
     const navigate = useNavigate();
     const [teamState, setTeamState] = useState(57);
-    const [teamIdFixtureState, setteamIdFixtureState] = useState(42);
+    const [teamId, setTeamId] = useState(40);
     const pickTeam = (newTeam) => {
         setTeamState(newTeam);
-        setteamIdFixtureState(newTeam);
     }
 
     const {dataTeams, loadingTeams, errorTeams} = useFetchTeams("http://api.football-data.org/v2/teams");
@@ -26,7 +25,6 @@ const TeamPicker = () => {
     fetchedTeams = JSON.parse(localStorage.getItem("apiTeams"));
     const eplTeamIds = [57, 58, 402, 397, 328, 61, 354, 62, 341, 338, 64, 65, 66, 67, 68, 340, 73, 346, 563, 76];
     const eplTeams = fetchedTeams.filter(({id}) => eplTeamIds.includes(id));
-    console.log(eplTeams);
     const goToTeam = (e) => {
         //1. Stop for submitting
         e.preventDefault();
@@ -34,14 +32,12 @@ const TeamPicker = () => {
         let teamName;
         for(let i = 0; i < eplTeams.length; i++) {
             if(+teamState === eplTeams[i].id) {
-                teamName = eplTeams[i].shortName;
-                let teamId = eplTeamIds[i];
-                console.log(teamId); 
+                teamName = eplTeams[i].shortName; 
+                setTeamId(eplTeams[i].id);
             }
         }
         //3. Change the page to /team/whatever-team-was-chosen using push state
         navigate(`/teams/${teamName}`);
-        console.log(teamName);
     }
     
 
@@ -75,7 +71,7 @@ const TeamPicker = () => {
                                 <option value={563}>West Ham</option>
                                 <option value={76}>Wolves</option>
                             </select>
-                            <button type="submit">Go to team!</button>
+                            <button type="submit" onClick={() => }>Go to team!</button>
                         </form>
                     </div>
                 </div>

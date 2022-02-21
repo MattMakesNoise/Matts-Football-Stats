@@ -26,17 +26,10 @@ const App = (props) => {
       <div className="App-body">
         <TeamBanner 
           name={team.teamName}
-          // fixturesId={}
         />
         <div className='TableStats-wrapper'>
           <Table />
-          <Stats 
-            address={teamObject.address}
-            crest={teamObject.crestUrl}
-            founded={teamObject.founded}
-            stadium={teamObject.venue}
-            website={teamObject.website}
-          />
+          <Stats />
         </div>
       </div>
       <Footer />

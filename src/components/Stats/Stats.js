@@ -1,19 +1,33 @@
 import React from "react";
-import useFetchTeamsTwo from "../Fetches/useFetchTeamsTwo";
-import styles from "../css/Stats.css";
+import useFetchStatsInfo from "../Fetches/useFetchStatsInfo";
+import useFetchStatsTeam from "../Fetches/useFetchStatsTeam";
+import "../css/Stats.css"
+import { teamIdsFixtures } from "../Helpers/helpers";
 
 const Stats = (props) => {
-    // const {dataTeamsTwo, loadingTeamsTwo, errorTeamsTwo} = useFetchTeamsTwo("https://api-football-v1.p.rapidapi.com/v3/teams/statistics");
-    // let standings;
-    // if(loadingTeamsTwo) return <div>Loading...</div>;
+    const {dataStatsInfo, loadingStatsInfo, errorStatsInfo} = useFetchStatsInfo();
+    let statsInfo;
+    if(loadingStatsInfo) return <div>Loading...</div>;
 
-    // if(errorTeamsTwo) console.log(errorTeamsTwo);
+    if(errorStatsInfo) console.log(errorStatsInfo);
 
-    // if(dataTeamsTwo) {
-    //     // localStorage.setItem("apiDataStandings", JSON.stringify(dataTeamsTwo.standings[0].table));
-    //     console.log(dataTeamsTwo);
+    if(dataStatsInfo) {
+        // localStorage.setItem("apiStatsInfo", JSON.stringify(dataTeamsTwo.standings[0].table));
+        console.log(dataStatsInfo);
+    }
+    // statsInfo = JSON.parse(localStorage.getItem("apiStatsInfo"));
+
+    // const {dataStatsTeam, loadingStatsTeam, errorStatsTeam} = useFetchStatsTeam();
+    // let statsTeam;
+    // if(loadingStatsTeam) return <div>Loading...</div>;
+
+    // if(errorStatsTeam) console.log(errorStatsTeam);
+
+    // if(dataStatsTeam) {
+    //     // localStorage.setItem("apiStatsTeam", JSON.stringify(dataTeamsTwo.standings[0].table));
+    //     console.log(dataStatsTeam);
     // }
-    // standings = JSON.parse(localStorage.getItem("apiDataStandings"));
+    // // statsTeam = JSON.parse(localStorage.getItem("apiStatsTeam"));
     return (
         <section className="statsWrapper">
             <div className="crestFounded">   

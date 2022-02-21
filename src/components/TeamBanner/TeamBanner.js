@@ -29,6 +29,8 @@ const TeamBanner = (props) => {
             teamsFixtures.push(fixtures.response[i]);
         }
     }
+    console.log(teamIdFixture)
+    
 
     return (
         <section className="teamBanner">
