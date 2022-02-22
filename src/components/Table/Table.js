@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import "../css/Table.css";
 
 const Table = (props) => {
@@ -22,7 +23,8 @@ const Table = (props) => {
             {/* 2. Loop through the data pulled from the array and output into each column */}
             {table.map((stand, i) => {
                 return (
-                    <div className="teamWrap">
+                    <Link to={`/teams/${stand.team.name}`} className="teamWrap">
+                    {/* <div className="teamWrap"> */}
                         <div className="position">{(i+1)}</div>
                         <div className="teamName">{stand.team.name}</div>
                         <div className="played">{stand.all.played}</div>
@@ -33,7 +35,8 @@ const Table = (props) => {
                         <div className="goalsAgainst">{stand.all.goals.against}</div>
                         <div className="goalDifference">{stand.goalsDiff}</div>
                         <div className="points">{stand.points}</div>
-                    </div>
+                    {/* </div> */}
+                    </Link>
                 )
             })}
         </div>

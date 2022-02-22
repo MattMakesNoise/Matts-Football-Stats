@@ -8,7 +8,7 @@ import "../css/TeamPicker.css";
 const TeamPicker = () => {
     const navigate = useNavigate();
     let fetchedTeams;
-    const [teamState, setTeamState] = useState(57);
+    const [teamState, setTeamState] = useState(33);
     let [teamId, setTeamId] = useState(40);
     const pickTeam = (newTeam) => {
         setTeamState(newTeam);

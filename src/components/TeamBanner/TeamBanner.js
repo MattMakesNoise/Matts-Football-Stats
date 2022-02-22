@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import {Link} from "react-router-dom";
 import {formatDate, formatTime} from "../Helpers/helpers";
 import '../css/TeamBanner.css';
 import {motion} from 'framer-motion';
@@ -25,7 +26,7 @@ const TeamBanner = (props) => {
                     {teamsFixtures.map((fixture) => {
                         return (
                             <motion.div className="carouselSlide">
-                                <div className="homeWrap">
+                                <Link to={`/teams/${fixture.teams.home.name}`} className="homeWrap">
                                     <div className="crestWrap">
                                         <img src={`${fixture.teams.home.logo}`} alt="team crest" className="teamCrest"></img>
                                     </div>
@@ -36,8 +37,8 @@ const TeamBanner = (props) => {
                                             : <div>{formatDate(fixture.fixture.date)}</div>
                                         }
                                     </div>
-                                </div>
-                                <div className="awayWrap">
+                                </Link>
+                                <Link to={`/teams/${fixture.teams.away.name}`} className="awayWrap">
                                     <div className="crestWrap">
                                         <img src={`${fixture.teams.away.logo}`} alt="team crest" className="teamCrest"></img>
                                     </div>
@@ -48,7 +49,7 @@ const TeamBanner = (props) => {
                                             : <div>{formatTime(fixture.fixture.date)}</div>
                                         }
                                     </div>
-                                </div>
+                                </Link>
                             </motion.div>
                         )
                     })}

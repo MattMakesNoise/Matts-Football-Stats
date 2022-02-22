@@ -3,8 +3,9 @@ import useFetchTeamStats from "../Fetches/useFetchTeamStats";
 import "../css/Stats.css"
 
 const Stats = (props) => {
-    // console.log(props.team)
-    // const {dataTeamStats, loading, error} = useFetchTeamStats(props.id);
+    let teamName = props.team;
+    let teamId = props.id;
+    // const {dataTeamStats, loading, error} = useFetchTeamStats(teamId);
         
     // if(loading) return <div>Loading...</div>;
 
@@ -12,7 +13,7 @@ const Stats = (props) => {
 
     // if(dataTeamStats) {
     //     console.log(dataTeamStats)
-    //     // localStorage.setItem(`apiTeamStats${props.team}`, JSON.stringify(dataTeamStats.data.response));
+    //     localStorage.setItem(`apiTeamStats${teamName}`, JSON.stringify(dataTeamStats));
     // }
 
     const infoArray = props.stats;

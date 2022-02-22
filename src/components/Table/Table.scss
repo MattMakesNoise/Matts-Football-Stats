@@ -26,6 +26,8 @@
     margin: auto;
     padding: .75rem 0;
     border-top: 1px solid $light-grey;
+    text-decoration: none;
+    color: $nearly-black;
     &:nth-child(even) {
         background-color: #d4d4d4;
     }

@@ -43,6 +43,8 @@
     .awayWrap {
         display: flex;
         justify-content: space-between;
+        text-decoration: none;
+        color: $nearly-black;
     }
     .homeWrap {
         padding-bottom: .5rem;
