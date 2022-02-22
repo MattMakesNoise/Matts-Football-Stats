@@ -1,4 +1,5 @@
 import React from "react";
+// import TeamPicker from "../TeamPicker/TeamPicker"
 import "../css/Header.css";
 
 class Header extends React.Component {
@@ -8,6 +9,7 @@ class Header extends React.Component {
                 <div className="logo">
                     <img src="../../logos_white_16x9.png"></img>
                 </div>
+                {/* <TeamPicker /> */}
             </header>
         )
     }

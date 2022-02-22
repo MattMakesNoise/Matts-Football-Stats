@@ -3,14 +3,18 @@
 .statsWrapper {
     background-color: $nearly-white;
     color: $nearly-black;
-    width: 50%;
-    margin: 1rem 0 1rem 1rem;
+    width: 100%;
+    margin: 1rem 0 1rem 0;
     padding: 1rem;
     border: 2px solid $nearly-white;
     @include borders;
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
+    @include xl {
+        width: 50%;
+        margin: 1rem 0 1rem 1rem;
+    }
     a {
         @include link;
     }

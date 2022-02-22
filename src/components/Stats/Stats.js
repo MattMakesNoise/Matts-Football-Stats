@@ -1,7 +1,20 @@
 import React from "react";
+import useFetchTeamStats from "../Fetches/useFetchTeamStats";
 import "../css/Stats.css"
 
 const Stats = (props) => {
+    // console.log(props.team)
+    // const {dataTeamStats, loading, error} = useFetchTeamStats(props.id);
+        
+    // if(loading) return <div>Loading...</div>;
+
+    // if(error) console.log(error);
+
+    // if(dataTeamStats) {
+    //     console.log(dataTeamStats)
+    //     // localStorage.setItem(`apiTeamStats${props.team}`, JSON.stringify(dataTeamStats.data.response));
+    // }
+
     const infoArray = props.stats;
     let teamStats;
     for(let i = 0; i < infoArray.length; i++) {
@@ -9,6 +22,8 @@ const Stats = (props) => {
             teamStats = infoArray[i];
         }
     }
+
+
     return (
         <section className="statsWrapper">
             <div className="crestFounded">   

@@ -3,9 +3,13 @@
 .table {
     background-color: $nearly-white;
     color: $nearly-black;
-    width: 50%;
+    width: 100%;
     margin: 1rem 1rem 1rem 0;
-    border: 2px solid $nearly-white;
+    border-top: 2px solid $nearly-white;
+    border-bottom: 2px solid $nearly-white;
+    @include xl {
+        width: 50%;
+    } 
     @include borders;
     .tableHead {
         display: flex;
@@ -22,8 +26,14 @@
     margin: auto;
     padding: .75rem 0;
     border-top: 1px solid $light-grey;
-    .teamWrap:nth-child(even) {
-        background-color: $very-light-grey;
+    &:nth-child(even) {
+        background-color: #d4d4d4;
+    }
+    &:nth-child(5),
+    &:nth-child(7),
+    &:nth-child(8),
+    &:nth-child(18) {
+        border-bottom: 1px dashed $nearly-black;
     }
 }
 
@@ -41,10 +51,19 @@
 }
 .position {
     width: 5%;
-    margin-left: 1rem;
+    margin-left: .25rem;
+    @include md {
+        margin-left: .75rem;
+    }
+    @include lg {
+        margin-left: 1rem;
+    }
 }
 .teamName {
-    width: 28%;
+    width: 35%;
+    @include lg {
+        width: 28%;
+    }
 }
 .played,
 .won,
@@ -55,4 +74,27 @@
 .goalDifference,
 .points {
     width: 8%;
+}
+
+.won,
+.drawn,
+.lost,
+.goalsFor,
+.goalsAgainst {
+    display: none;
+}
+
+.won,
+.drawn,
+.lost {
+    @include md {
+        display: block;
+    }
+}
+
+.goalsFor,
+.goalsAgainst {
+    @include xxl {
+        display: block;
+    }
 }

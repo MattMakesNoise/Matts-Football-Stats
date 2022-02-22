@@ -18,9 +18,41 @@ $light-grey: #cdcdcd;
 }
 
 //=============== BREAKPOINTS ==========//
-$break-xs: 575px;
-$break-s: 576px;
-$break-m: 768px;
-$break-lg: 992px;
-$break-xl: 1260px;
-$break-xxl: 1800px;
+$breakpoints: (
+    "sm": 485px,
+    "md": 768px,
+    "lg": 990px,
+    "xl": 1200px,
+    "xxl": 1400px,
+);
+
+@mixin sm {
+    @media (min-width: map-get($breakpoints, "sm")) {
+        @content;
+    }
+}
+@mixin md {
+    @media (min-width: map-get($breakpoints, "md")) {
+        @content;
+    }
+}
+@mixin lg {
+    @media (min-width: map-get($breakpoints, "lg")) {
+        @content;
+    }
+}
+@mixin xl {
+    @media (min-width: map-get($breakpoints, "xl")) {
+        @content;
+    }
+}
+@mixin xxl {
+    @media (min-width: map-get($breakpoints, "xxl")) {
+        @content;
+    }
+}
+@mixin breakpoint($bp: 0) {
+    @media (min-width: $bp) {
+        @content;
+    }
+}

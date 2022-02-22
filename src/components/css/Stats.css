@@ -1,8 +1,8 @@
 .statsWrapper {
   background-color: #F1F1E6;
   color: #504F54;
-  width: 50%;
-  margin: 1rem 0 1rem 1rem;
+  width: 100%;
+  margin: 1rem 0 1rem 0;
   padding: 1rem;
   border: 2px solid #F1F1E6;
   border-radius: 5px;
@@ -17,6 +17,13 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+@media (min-width: 1200px) {
+  .statsWrapper {
+    width: 50%;
+    margin: 1rem 0 1rem 1rem;
+  }
 }
 
 .statsWrapper a {

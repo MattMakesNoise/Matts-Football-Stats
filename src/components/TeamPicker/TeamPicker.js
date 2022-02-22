@@ -3,13 +3,13 @@ import {useNavigate} from 'react-router-dom';
 import '../../App.css';
 import useFetchTeamInfo from "../Fetches/useFetchTeamInfo";
 import Header from "../Header/Header";
-import styles from "./TeamPicker.module.css";
+import "../css/TeamPicker.css";
 
 const TeamPicker = () => {
     const navigate = useNavigate();
     let fetchedTeams;
     const [teamState, setTeamState] = useState(57);
-    const [teamId, setTeamId] = useState(40);
+    let [teamId, setTeamId] = useState(40);
     const pickTeam = (newTeam) => {
         setTeamState(newTeam);
     }
@@ -25,25 +25,25 @@ const TeamPicker = () => {
     //     localStorage.setItem("apiTeamInfo", JSON.stringify(dataTeamInfo.data.response));
     // }
     fetchedTeams = JSON.parse(localStorage.getItem("apiTeamInfo"));
-    console.log(fetchedTeams);
+    // console.log(fetchedTeams);
     const goToTeam = (e) => {
         e.preventDefault();
         let teamName;
+        let teamId;
         for(let i = 0; i < fetchedTeams.length; i++) {
             if(+teamState === fetchedTeams[i].team.id) { 
-                setTeamId(fetchedTeams[i].team.id);
+                teamId = fetchedTeams[i].team.id;
                 teamName = fetchedTeams[i].team.name;
-                console.log(teamName);
             }
         }
-        navigate(`/teams/${teamName}`);
+        navigate(`/teams/${teamName}`, {state: {id: teamId}});
     }
     return (
-        <div className={styles.App}>
+        <div className="App">
             <Header />
-            <div className={styles.AppBody}>
-                <div className={styles.AppBodyInner}>
-                    <div className={styles.teamPickWrap}>
+            <div className="AppBody">
+                <div className="AppBodyInner">
+                    <div className="teamPickWrap">
                         <h2>Pick A Team</h2>
                         <form action="" onSubmit={(e) => goToTeam(e)}>
                             <select onChange={(e) => {pickTeam(e.target.value)}} value={teamState}>
@@ -53,7 +53,7 @@ const TeamPicker = () => {
                                     )
                                 })}
                             </select>
-                            <button type="submit">Go to team!</button>
+                            <button type="submit" onClick={() => setTeamId(teamId)}>Go to team!</button>
                         </form>
                     </div>
                 </div>

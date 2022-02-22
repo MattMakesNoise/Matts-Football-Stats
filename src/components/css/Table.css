@@ -1,12 +1,19 @@
 .table {
   background-color: #F1F1E6;
   color: #504F54;
-  width: 50%;
+  width: 100%;
   margin: 1rem 1rem 1rem 0;
-  border: 2px solid #F1F1E6;
+  border-top: 2px solid #F1F1E6;
+  border-bottom: 2px solid #F1F1E6;
   border-radius: 5px;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 1200px) {
+  .table {
+    width: 50%;
+  }
 }
 
 .table .tableHead {
@@ -39,8 +46,12 @@
   border-top: 1px solid #cdcdcd;
 }
 
-.teamWrap .teamWrap:nth-child(even) {
-  background-color: #efefef;
+.teamWrap:nth-child(even) {
+  background-color: #d4d4d4;
+}
+
+.teamWrap:nth-child(5), .teamWrap:nth-child(7), .teamWrap:nth-child(8), .teamWrap:nth-child(18) {
+  border-bottom: 1px dashed #504F54;
 }
 
 .position,
@@ -58,11 +69,29 @@
 
 .position {
   width: 5%;
-  margin-left: 1rem;
+  margin-left: .25rem;
+}
+
+@media (min-width: 768px) {
+  .position {
+    margin-left: .75rem;
+  }
+}
+
+@media (min-width: 990px) {
+  .position {
+    margin-left: 1rem;
+  }
 }
 
 .teamName {
-  width: 28%;
+  width: 35%;
+}
+
+@media (min-width: 990px) {
+  .teamName {
+    width: 28%;
+  }
 }
 
 .played,
@@ -74,5 +103,28 @@
 .goalDifference,
 .points {
   width: 8%;
+}
+
+.won,
+.drawn,
+.lost,
+.goalsFor,
+.goalsAgainst {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .won,
+  .drawn,
+  .lost {
+    display: block;
+  }
+}
+
+@media (min-width: 1400px) {
+  .goalsFor,
+  .goalsAgainst {
+    display: block;
+  }
 }
 /*# sourceMappingURL=Table.css.map */

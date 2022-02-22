@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 // import useFetch from "../src/components/Fetches/useFetch";
 import './App.css';
@@ -31,6 +31,14 @@ const App = () => {
     let teamInfo = JSON.parse(localStorage.getItem("apiTeamInfo"));
     let table = JSON.parse(localStorage.getItem("apiTable"));
     let fixtures = JSON.parse(localStorage.getItem("apiFixtures"));
+    // let teamId = useState(id: teamId);
+    let teamId;
+
+    for(let i = 0; i < teamInfo.length; i++) {
+        if(team.teamName === teamInfo[i].team.name) {
+            teamId = teamInfo[i].team.id;
+        }
+    }
 
     return (
         <div className="App">
@@ -39,14 +47,17 @@ const App = () => {
             <TeamBanner 
                 fixtures={fixtures}
                 team={team.teamName}
+                id={teamId}
             />
         <div className='TableStats-wrapper'>
             <Table 
                 standings={table}
+                id={teamId}
             />
             <Stats 
                 stats={teamInfo}
                 team={team.teamName}
+                id={teamId}
             />
         </div>
         </div>
