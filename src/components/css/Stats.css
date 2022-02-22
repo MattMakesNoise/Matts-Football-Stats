@@ -1,4 +1,11 @@
 .statsWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #F1F1E6;
   color: #504F54;
   width: 100%;
@@ -8,15 +15,6 @@
   border-radius: 5px;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
 }
 
 @media (min-width: 1200px) {
@@ -33,6 +31,17 @@
   cursor: pointer;
 }
 
+.statsWrapper .teamInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
 .crestFounded {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -41,6 +50,12 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 33%;
+  margin-right: 1rem;
+  margin-left: -2rem;
 }
 
 .crestFounded img {
@@ -53,17 +68,55 @@
   text-align: left;
 }
 
-.stadiumWebsite h3,
-.stadiumWebsite p {
+.crestFounded h2,
+.crestFounded h3,
+.crestFounded img {
+  padding: .5rem 0;
+}
+
+.stadiumWebsite {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 66%;
+  padding: .5rem;
+}
+
+.stadiumWebsite h3 {
   margin-bottom: 1rem;
 }
 
-.stadiumWebsite img {
-  width: 50%;
+.stadiumWebsite p {
+  margin-bottom: .75rem;
+}
+
+.stadiumWebsite .stadiumAddress {
+  width: 40%;
+}
+
+.stadiumWebsite .stadiumImage {
+  width: 60%;
+}
+
+.stadiumWebsite .stadiumImage img {
+  width: 100%;
   height: auto;
   margin-bottom: 1rem;
   border-radius: 5px;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.teamStats div {
+  margin-bottom: .5rem;
+}
+
+.teamStats .percentage {
+  margin-left: 1rem;
+  font-style: italic;
+}
+
+.teamStats .form {
+  letter-spacing: 3px;
 }
 /*# sourceMappingURL=Stats.css.map */
