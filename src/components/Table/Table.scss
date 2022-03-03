@@ -19,6 +19,11 @@
     }
 }
 
+.teamLink {
+    text-decoration: none;
+    color: $nearly-black;
+}
+
 .teamWrap {
     display: flex;
     flex-direction: row;

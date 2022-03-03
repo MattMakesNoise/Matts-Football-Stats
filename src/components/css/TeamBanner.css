@@ -64,8 +64,6 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  text-decoration: none;
-  color: #504F54;
 }
 
 .carouselSlide .homeWrap {
@@ -106,6 +104,8 @@
       -ms-flex-align: center;
           align-items: center;
   margin-right: 1rem;
+  text-decoration: none;
+  color: #504F54;
 }
 
 .scoredateHome,

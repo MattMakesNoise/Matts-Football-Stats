@@ -26,30 +26,30 @@ const TeamBanner = (props) => {
                     {teamsFixtures.map((fixture) => {
                         return (
                             <motion.div className="carouselSlide">
-                                <Link to={`/teams/${fixture.teams.home.name}`} className="homeWrap">
-                                    <div className="crestWrap">
+                                <div className="homeWrap">
+                                    <Link to={`/teams/${fixture.teams.home.name}`} className="crestWrap">
                                         <img src={`${fixture.teams.home.logo}`} alt="team crest" className="teamCrest"></img>
-                                    </div>
-                                    <div className="nameWrap">{fixture.teams.home.name}</div>
+                                    </Link>
+                                    <Link to={`/teams/${fixture.teams.home.name}`} className="nameWrap">{fixture.teams.home.name}</Link>
                                     <div className="scoredateHome">
                                         {fixture.score.fulltime.home !== null 
                                             ? <div>{`${fixture.score.fulltime.home}`}</div>
                                             : <div>{formatDate(fixture.fixture.date)}</div>
                                         }
                                     </div>
-                                </Link>
-                                <Link to={`/teams/${fixture.teams.away.name}`} className="awayWrap">
-                                    <div className="crestWrap">
+                                </div>
+                                <div className="awayWrap">
+                                    <Link to={`/teams/${fixture.teams.away.name}`} className="crestWrap">
                                         <img src={`${fixture.teams.away.logo}`} alt="team crest" className="teamCrest"></img>
-                                    </div>
-                                    <div className="nameWrap">{fixture.teams.away.name}</div>
+                                    </Link>
+                                    <Link to={`/teams/${fixture.teams.away.name}`} className="nameWrap">{fixture.teams.away.name}</Link>
                                     <div className="scoredateAway">
                                         {fixture.score.fulltime.away !== null 
                                             ? <div>{`${fixture.score.fulltime.away}`}</div>
                                             : <div>{formatTime(fixture.fixture.date)}</div>
                                         }
                                     </div>
-                                </Link>
+                                </div>
                             </motion.div>
                         )
                     })}

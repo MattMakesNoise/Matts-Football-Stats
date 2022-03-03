@@ -1,3 +1,20 @@
+import { useRef, useEffect } from 'react';
+
+export const useDidMount = () => {
+    const didMountRef = useRef(true);
+    useEffect(() => {
+        didMountRef.current = false;
+    }, []);
+    return didMountRef.current;
+};
+export const useDidMountFetch = () => {
+    const didMountRef = useRef(true);
+    useEffect(() => {
+        didMountRef.current = false;
+    }, []);
+    return didMountRef.current;
+};
+
 export const teamIdsTable = {
     arsenal: 57,
     astonVilla: 58,

@@ -30,6 +30,11 @@
   margin: 1rem 0;
 }
 
+.teamLink {
+  text-decoration: none;
+  color: #504F54;
+}
+
 .teamWrap {
   display: -webkit-box;
   display: -ms-flexbox;

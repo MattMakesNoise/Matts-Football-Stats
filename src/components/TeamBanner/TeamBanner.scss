@@ -43,8 +43,6 @@
     .awayWrap {
         display: flex;
         justify-content: space-between;
-        text-decoration: none;
-        color: $nearly-black;
     }
     .homeWrap {
         padding-bottom: .5rem;
@@ -71,6 +69,8 @@
     justify-content: flex-start;
     align-items: center;
     margin-right: 1rem;
+    text-decoration: none;
+    color: $nearly-black;
 }
 
 .scoredateHome,

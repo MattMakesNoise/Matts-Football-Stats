@@ -1,31 +1,32 @@
 import React, { useState } from "react";
 import {useNavigate} from 'react-router-dom';
+import {useDidMount} from "../Helpers/helpers";
 import '../../App.css';
-import useFetchTeamInfo from "../Fetches/useFetchTeamInfo";
+import useFetchTable from "../Fetches/useFetchTable";
 import Header from "../Header/Header";
 import "../css/TeamPicker.css";
 
 const TeamPicker = () => {
     const navigate = useNavigate();
-    let fetchedTeams;
     const [teamState, setTeamState] = useState(33);
     let [teamId, setTeamId] = useState(40);
     const pickTeam = (newTeam) => {
         setTeamState(newTeam);
     }
 
-    // const {dataTeamInfo, loading, error} = useFetchTeamInfo();
+    const {dataTable, loading, error} = useFetchTable();
+
+    let fetchedTeams;
+
+    if(loading) return <div>Loading...</div>;
+
+    if(error) console.log(error);
+
+    if(dataTable) {
+        localStorage.setItem("apiTable", JSON.stringify(dataTable.data.response[0].league.standings[0]));
+    } 
     
-    // if(loading) return <div>Loading...</div>;
-
-    // if(error) console.log(error);
-
-    // if(dataTeamInfo) {
-    //     console.log(dataTeamInfo.data.response)
-    //     localStorage.setItem("apiTeamInfo", JSON.stringify(dataTeamInfo.data.response));
-    // }
-    fetchedTeams = JSON.parse(localStorage.getItem("apiTeamInfo"));
-    // console.log(fetchedTeams);
+    fetchedTeams = JSON.parse(localStorage.getItem("apiTable"))
     const goToTeam = (e) => {
         e.preventDefault();
         let teamName;

@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import "../css/Table.css";
 
 const Table = (props) => {
-    let table = props.standings[0];
+    let table = props.standings;
 
     return (
         <div className="table">
@@ -24,7 +24,6 @@ const Table = (props) => {
             {table.map((stand, i) => {
                 return (
                     <Link to={`/teams/${stand.team.name}`} className="teamWrap">
-                    {/* <div className="teamWrap"> */}
                         <div className="position">{(i+1)}</div>
                         <div className="teamName">{stand.team.name}</div>
                         <div className="played">{stand.all.played}</div>
@@ -35,7 +34,6 @@ const Table = (props) => {
                         <div className="goalsAgainst">{stand.all.goals.against}</div>
                         <div className="goalDifference">{stand.goalsDiff}</div>
                         <div className="points">{stand.points}</div>
-                    {/* </div> */}
                     </Link>
                 )
             })}
