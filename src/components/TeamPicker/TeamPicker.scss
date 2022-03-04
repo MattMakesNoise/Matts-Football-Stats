@@ -1,0 +1,71 @@
+@import "../Helpers/shared.scss";
+
+.App {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $dark-blue;
+    width: 100vw;
+    padding: 1rem;
+}
+
+.AppBody {
+background-color: $dark-blue; 
+min-height: 100vh;
+width: 100vw;
+font-size: 1rem;
+color: $nearly-white;
+}
+
+.AppBodyInner {
+    display: flex;
+    justify-content: center;
+    background-color: $nearly-white;
+    min-height: 100vh;
+    width: 1200px;
+    @include borders;
+    margin: auto;
+}
+
+.teamPickWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include borders;
+    height: 50%;
+    background-color: $dark-blue;
+    color: $nearly-white;
+    margin-top: 5rem;
+    padding: 1rem;
+    select {
+        padding: 1rem;
+        margin: 1rem 0;
+        @include borders;
+        font-size: 1.5rem;
+        cursor: pointer;
+        appearance: none;
+        overflow: hidden;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        button {
+            background-color: $nearly-white;
+            padding: .5rem;
+            font-size: 1rem;
+            @include borders;
+            cursor: pointer;
+            &:hover {
+                transform: scale(1.01);
+            }
+            &:active {
+                transform: scale(0.98);
+            }
+        }
+    }
+}

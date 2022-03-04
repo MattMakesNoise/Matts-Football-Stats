@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import useFetch from "../src/components/Fetches/useFetch";
 import './App.css';
 import Header from "./components/Header/Header";
 import TeamBanner from './components/TeamBanner/TeamBanner';
@@ -7,34 +8,60 @@ import Table from './components/Table/Table';
 import Stats from './components/Stats/Stats';
 import Footer from './components/Footer/Footer';
 
-const App = (props) => {
-  const team = useParams();
-  let fetchedTeams = JSON.parse(localStorage.getItem("apiTeams"));
-  const eplTeamIds = [57, 58, 402, 397, 328, 61, 354, 62, 341, 338, 64, 65, 66, 67, 68, 340, 73, 346, 563, 76];
-  const eplTeams = fetchedTeams.filter(({id}) => eplTeamIds.includes(id));
-  let teamObject;
+const App = () => {
+    const {dataTeamInfo, dataFixtures, loading, error} = useFetch();
+    let team = useParams();
 
-  for(let i = 0; i < eplTeams.length; i++) {
-    if(team.teamName === eplTeams[i].shortName) {
-      teamObject = eplTeams[i];
+    if(loading) return <div>Loading...</div>;
+
+    if(error) console.log(error);
+
+    if(dataTeamInfo) {
+        // console.log(dataTeamInfo.data.response)
+        localStorage.setItem("apiTeamInfo", JSON.stringify(dataTeamInfo.data.response));
     }
-  }
+    
+    if(dataFixtures) {
+        // console.log(dataFixtures.data.response)
+        localStorage.setItem("apiFixtures", JSON.stringify(dataFixtures.data.response));
+    }    
 
-  return (
-    <div className="App">
-      <Header />
-      <div className="App-body">
-        <TeamBanner 
-          name={team.teamName}
-        />
+    let teamInfo = JSON.parse(localStorage.getItem("apiTeamInfo"));
+    let table = JSON.parse(localStorage.getItem("apiTable"));
+    let fixtures = JSON.parse(localStorage.getItem("apiFixtures"));
+    // let teamId = useState(id: teamId);
+    let teamId;
+
+    for(let i = 0; i < teamInfo.length; i++) {
+        if(team.teamName === teamInfo[i].team.name) {
+            teamId = teamInfo[i].team.id;
+        }
+    }
+
+    return (
+        <div className="App">
+            <Header />
+        <div className="App-body">
+            <TeamBanner 
+                fixtures={fixtures}
+                team={team.teamName}
+                id={teamId}
+            />
         <div className='TableStats-wrapper'>
-          <Table />
-          <Stats />
+            <Table 
+                standings={table}
+                id={teamId}
+            />
+            <Stats 
+                stats={teamInfo}
+                team={team.teamName}
+                id={teamId}
+            />
         </div>
-      </div>
-      <Footer />
-    </div>
-  );
+        </div>
+            <Footer />
+        </div>
+    );
 }
 
 export default App;

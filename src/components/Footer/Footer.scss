@@ -1,0 +1,11 @@
+@import "../Helpers/shared.scss";
+
+.footer {
+    background-color: $dark-blue;
+    color: $nearly-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}

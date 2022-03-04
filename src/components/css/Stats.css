@@ -1,22 +1,27 @@
 .statsWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #F1F1E6;
   color: #504F54;
-  width: 50%;
-  margin: 1rem 0 1rem 1rem;
+  width: 100%;
+  margin: 1rem 0 1rem 0;
   padding: 1rem;
   border: 2px solid #F1F1E6;
   border-radius: 5px;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+}
+
+@media (min-width: 1200px) {
+  .statsWrapper {
+    width: 50%;
+    margin: 1rem 0 1rem 1rem;
+  }
 }
 
 .statsWrapper a {
@@ -24,6 +29,21 @@
   text-transform: uppercase;
   vertical-align: middle;
   cursor: pointer;
+}
+
+.statsWrapper .teamInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
 .crestFounded {
@@ -34,10 +54,14 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
 }
 
 .crestFounded img {
-  width: 50%;
+  width: 25%;
   height: auto;
   margin-bottom: 1rem;
 }
@@ -46,8 +70,98 @@
   text-align: left;
 }
 
-.stadiumWebsite h3,
-.stadiumWebsite p {
+.crestFounded h2,
+.crestFounded h3,
+.crestFounded img {
+  padding: .5rem 0;
+}
+
+.stadiumWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: .5rem;
+}
+
+.stadiumWrapper h3 {
   margin-bottom: 1rem;
+}
+
+.stadiumWrapper p {
+  margin-bottom: .75rem;
+}
+
+.stadiumWrapper .stadium {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.stadiumWrapper .stadiumImage {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1rem;
+}
+
+.stadiumWrapper .stadiumImage img {
+  width: 40%;
+  height: auto;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.teamStats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+}
+
+@media (min-width: 485px) {
+  .teamStats {
+    margin-left: 30%;
+  }
+}
+
+.teamStats div {
+  margin-bottom: .5rem;
+}
+
+.teamStats .percentage {
+  margin-left: 1rem;
+  font-style: italic;
+}
+
+.teamStats .form {
+  letter-spacing: 3px;
 }
 /*# sourceMappingURL=Stats.css.map */

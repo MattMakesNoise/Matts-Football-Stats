@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+}
+
+.App-body {
+  background-color: #282c34;
+  min-height: 100vh;
+  font-size: 1rem;
+  color: white;
+}
+
+.TableStats-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  margin: auto;
+}
+/*# sourceMappingURL=App.css.map */
