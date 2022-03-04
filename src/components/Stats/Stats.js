@@ -12,10 +12,12 @@ const Stats = (props) => {
     if(error) console.log(error);
 
     if(dataTeamStats) {
+        // console.log(dataTeamStats);
         localStorage.setItem(`apiTeamStats${teamName}`, JSON.stringify(dataTeamStats));
     }
 
     let teamInfo = JSON.parse(localStorage.getItem(`apiTeamStats${teamName}`));
+    // console.log(teamInfo.response.form);
 
     const infoArray = props.stats;
     let teamStats;
@@ -56,7 +58,7 @@ const Stats = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="teamStats">
+            {teamInfo && <div className="teamStats">
                 <div><strong>Clean Sheets</strong>: {teamInfo.response.clean_sheet.total}</div>
                 <div><strong>Goals for Average</strong>: {teamInfo.response.goals.for.average.total}</div>
                 <div><strong>Goals against Average</strong>: {teamInfo.response.goals.against.average.total}</div>
@@ -64,7 +66,7 @@ const Stats = (props) => {
                 <div><strong>Penalties scored</strong>: {teamInfo.response.penalty.scored.total} <span className="percentage">Percentage</span>: {teamInfo.response.penalty.scored.percentage}</div>
                 <div><strong>Penalties missed</strong>: {teamInfo.response.penalty.missed.total} <span className="percentage">Percentage</span>: {teamInfo.response.penalty.missed.percentage}</div>
                 <div><strong>Form</strong>: <span className="form">{form}</span></div>
-            </div>
+            </div>}
         </section>
     )
 }
