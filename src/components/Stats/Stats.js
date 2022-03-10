@@ -5,19 +5,17 @@ import "../css/Stats.css"
 const Stats = (props) => {
     let teamName = props.team;
     let teamId = props.id;
-    const {dataTeamStats, loading, error} = useFetchTeamStats(teamId);
+    const {dataTeamStats, loading, error} = useFetchTeamStats(teamId, teamName);
         
     if(loading) return <div>Loading...</div>;
 
     if(error) console.log(error);
 
     if(dataTeamStats) {
-        // console.log(dataTeamStats);
         localStorage.setItem(`apiTeamStats${teamName}`, JSON.stringify(dataTeamStats));
     }
 
     let teamInfo = JSON.parse(localStorage.getItem(`apiTeamStats${teamName}`));
-    // console.log(teamInfo.response.form);
 
     const infoArray = props.stats;
     let teamStats;
@@ -26,13 +24,14 @@ const Stats = (props) => {
             teamStats = infoArray[i];
         }
     }
-    // const teamFormPretty = () => {
-    //     const formFull = teamInfo.response.form;
-    //     const form =  formFull.slice(formFull.length -5)
 
-    // }
-    const formFull = teamInfo.response.form;
-    const form =  formFull.slice(formFull.length -5)
+    let formFull;
+    let form;
+    if(teamInfo) {
+        formFull = teamInfo.response.form;
+        form =  formFull.slice(formFull.length -5);
+    }
+    
 
     return (
         <section className="statsWrapper">
@@ -65,7 +64,7 @@ const Stats = (props) => {
                 <div><strong>Failed to Score</strong>: {teamInfo.response.failed_to_score.total}</div>
                 <div><strong>Penalties scored</strong>: {teamInfo.response.penalty.scored.total} <span className="percentage">Percentage</span>: {teamInfo.response.penalty.scored.percentage}</div>
                 <div><strong>Penalties missed</strong>: {teamInfo.response.penalty.missed.total} <span className="percentage">Percentage</span>: {teamInfo.response.penalty.missed.percentage}</div>
-                <div><strong>Form</strong>: <span className="form">{form}</span></div>
+                {form && <div><strong>Form</strong>: <span className="form">{form}</span></div>}
             </div>}
         </section>
     )
