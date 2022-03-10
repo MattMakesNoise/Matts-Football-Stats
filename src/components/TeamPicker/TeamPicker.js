@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {useNavigate} from 'react-router-dom';
-import {useDidMount} from "../Helpers/helpers";
 import '../../App.css';
 import useFetchTable from "../Fetches/useFetchTable";
 import Header from "../Header/Header";
@@ -24,6 +23,7 @@ const TeamPicker = () => {
 
     if(dataTable) {
         localStorage.setItem("apiTable", JSON.stringify(dataTable.data.response[0].league.standings[0]));
+        console.log(dataTable)
     } 
     
     fetchedTeams = JSON.parse(localStorage.getItem("apiTable"))
@@ -39,6 +39,7 @@ const TeamPicker = () => {
         }
         navigate(`/teams/${teamName}`, {state: {id: teamId}});
     }
+    
     return (
         <div className="App">
             <Header />
@@ -48,7 +49,7 @@ const TeamPicker = () => {
                         <h2>Pick A Team</h2>
                         <form action="" onSubmit={(e) => goToTeam(e)}>
                             <select onChange={(e) => {pickTeam(e.target.value)}} value={teamState}>
-                                {fetchedTeams.map((team) => {
+                                {fetchedTeams && fetchedTeams.map((team) => {
                                     return (
                                         <option value={team.team.id}>{team.team.name}</option>
                                     )
