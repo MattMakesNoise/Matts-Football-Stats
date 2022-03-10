@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { optionsTeamStats } from '../Helpers/endpoints';
 
 const useFetchTeamStats = (id, teamName) => {
     const [dataTeamStats, setDataTeamStats] = useState(null);
@@ -19,7 +18,6 @@ const useFetchTeamStats = (id, teamName) => {
     
     useEffect(() => {
         if(localStorage.getItem(`apiTeamStats${teamName}`) === null) {
-            console.log('First Render useFetchTeamStats from Stats component - API called');
             setLoading(true);
             axios(options).then((response) => {
                 setDataTeamStats(response.data); 
@@ -28,10 +26,7 @@ const useFetchTeamStats = (id, teamName) => {
             }).finally(() => {
                 setLoading(false);
             })
-        } else {
-            console.log("API TeamStats DIDN'T get called, it's already in local storage!");
         }
-        
     }, [id]);
     return {dataTeamStats, loading, error}
 }

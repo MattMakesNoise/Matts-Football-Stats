@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import "../css/Table.css";
+import "../Table/Table.css";
 
 const Table = (props) => {
     let table = props.standings;
@@ -8,7 +8,6 @@ const Table = (props) => {
     return (
         <div className="table">
             <div className="tableHead">
-                {/* 1. Add a header for the table with data description */}
                 <div className="position"><strong>Pos</strong></div>
                 <div className="teamName"><strong>Team Name</strong></div>
                 <div className="played"><strong>Played</strong></div>
@@ -20,7 +19,6 @@ const Table = (props) => {
                 <div className="goalDifference"><strong>GD</strong></div>
                 <div className="points"><strong>Pts</strong></div>
             </div>
-            {/* 2. Loop through the data pulled from the array and output into each column */}
             {table.map((stand, i) => {
                 return (
                     <Link to={`/teams/${stand.team.name}`} className="teamWrap">

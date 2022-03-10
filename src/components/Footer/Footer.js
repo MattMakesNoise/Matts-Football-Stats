@@ -1,10 +1,7 @@
 import React from "react";
-import '../css/Footer.css';
+import '../Footer/Footer.css';
 
 const Footer = () => {
-    // const year = new Date().getFullYear();
-    // let year = date.getFullYear(); 
-
     return (
         <section className="footer">
             <div>

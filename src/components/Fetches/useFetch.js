@@ -12,7 +12,6 @@ const useFetch = () => {
 
     useEffect(() => {
         if(localStorage.getItem("apiTeamInfo") === null || localStorage.getItem("apiFixtures") === null) {
-            console.log('First Render useFetch from App component - API called');
             setLoading(true);
             axios.all([requestOne, requestTwo]).then(axios.spread((...responses) => {
                 setDataTeamInfo(responses[0]);
@@ -22,8 +21,6 @@ const useFetch = () => {
             }).finally(() => {
                 setLoading(false);
             })
-        } else {
-            console.log("API TeamInfo and Fixtures DIDN'T get called, they're already in local storage!");
         }
     }, []);
     return {dataTeamInfo, dataFixtures, loading, error};

@@ -1,13 +1,14 @@
 import React from "react";
 import useFetchTeamStats from "../Fetches/useFetchTeamStats";
-import "../css/Stats.css"
+import LoadingSpinner from "../Loading/LoadingSpinner";
+import "../Stats/Stats.css"
 
 const Stats = (props) => {
     let teamName = props.team;
     let teamId = props.id;
     const {dataTeamStats, loading, error} = useFetchTeamStats(teamId, teamName);
         
-    if(loading) return <div>Loading...</div>;
+    if(loading) return <LoadingSpinner />
 
     if(error) console.log(error);
 
@@ -31,7 +32,6 @@ const Stats = (props) => {
         formFull = teamInfo.response.form;
         form =  formFull.slice(formFull.length -5);
     }
-    
 
     return (
         <section className="statsWrapper">

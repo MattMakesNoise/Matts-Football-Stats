@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import {Link} from "react-router-dom";
 import {formatDate, formatTime} from "../Helpers/helpers";
-import '../css/TeamBanner.css';
+import '../TeamBanner/TeamBanner.css';
 import {motion} from 'framer-motion';
 
 const TeamBanner = (props) => { 

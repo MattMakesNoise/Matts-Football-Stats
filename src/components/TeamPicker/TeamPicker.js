@@ -3,7 +3,8 @@ import {useNavigate} from 'react-router-dom';
 import '../../App.css';
 import useFetchTable from "../Fetches/useFetchTable";
 import Header from "../Header/Header";
-import "../css/TeamPicker.css";
+import "../TeamPicker/TeamPicker.css";
+import LoadingSpinner from "../Loading/LoadingSpinner";
 
 const TeamPicker = () => {
     const navigate = useNavigate();
@@ -17,13 +18,12 @@ const TeamPicker = () => {
 
     let fetchedTeams;
 
-    if(loading) return <div>Loading...</div>;
+    if(loading) return <LoadingSpinner />;
 
     if(error) console.log(error);
 
     if(dataTable) {
         localStorage.setItem("apiTable", JSON.stringify(dataTable.data.response[0].league.standings[0]));
-        console.log(dataTable)
     } 
     
     fetchedTeams = JSON.parse(localStorage.getItem("apiTable"))
