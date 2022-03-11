@@ -42,7 +42,7 @@ const Stats = (props) => {
                     <h3>Address</h3>
                     <p>{teamStats.venue.address}</p>
                     <p>{teamStats.venue.city}</p>
-                    <p><strong>Founded in</strong>: {teamStats.team.founded}</p>
+                    <p className="founded"><strong>Founded in</strong>: {teamStats.team.founded}</p>
                 </div>
                 <div className="stadiumWrapper">
                     <div className="stadium"> 

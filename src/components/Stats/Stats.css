@@ -89,6 +89,10 @@
   padding: .5rem 0;
 }
 
+.crestFounded .founded {
+  margin-top: .5rem;
+}
+
 .stadiumWrapper {
   display: -webkit-box;
   display: -ms-flexbox;

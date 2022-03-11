@@ -19,11 +19,6 @@
     }
 }
 
-.teamLink {
-    text-decoration: none;
-    color: $nearly-black;
-}
-
 .teamWrap {
     display: flex;
     flex-direction: row;
@@ -33,6 +28,9 @@
     border-top: 1px solid $light-grey;
     text-decoration: none;
     color: $nearly-black;
+    &:hover {
+        color: black;
+    }
     &:nth-child(even) {
         background-color: #d4d4d4;
     }
@@ -54,6 +52,17 @@
     display: none;
     @include lg {
         display: block;
+    }
+}
+
+.played.short {
+    @include xl {
+        display: block;
+    }
+}
+.played.full {
+    @include xl {
+        display: none;
     }
 }
 

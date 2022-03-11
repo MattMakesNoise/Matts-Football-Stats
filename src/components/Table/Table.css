@@ -30,11 +30,6 @@
   margin: 1rem 0;
 }
 
-.teamLink {
-  text-decoration: none;
-  color: #504F54;
-}
-
 .teamWrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -51,6 +46,10 @@
   border-top: 1px solid #cdcdcd;
   text-decoration: none;
   color: #504F54;
+}
+
+.teamWrap:hover {
+  color: black;
 }
 
 .teamWrap:nth-child(even) {
@@ -78,6 +77,18 @@
 @media (min-width: 990px) {
   .full {
     display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  .played.short {
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  .played.full {
+    display: none;
   }
 }
 
