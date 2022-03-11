@@ -49,11 +49,17 @@
 }
 
 .teamWrap:hover {
-  color: black;
+  color: #F1F1E6;
+  background-color: #132257;
 }
 
 .teamWrap:nth-child(even) {
   background-color: #d4d4d4;
+}
+
+.teamWrap:nth-child(even):hover {
+  color: #F1F1E6;
+  background-color: #132257;
 }
 
 .teamWrap:nth-child(5), .teamWrap:nth-child(7), .teamWrap:nth-child(8), .teamWrap:nth-child(18) {

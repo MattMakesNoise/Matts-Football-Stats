@@ -29,10 +29,15 @@
     text-decoration: none;
     color: $nearly-black;
     &:hover {
-        color: black;
+        color: $nearly-white;
+        background-color: $dark-blue;
     }
     &:nth-child(even) {
         background-color: #d4d4d4;
+        &:hover {
+            color: $nearly-white;
+            background-color: $dark-blue;
+        }
     }
     &:nth-child(5),
     &:nth-child(7),

@@ -3,6 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import '../../App.css';
 import useFetchTable from "../Fetches/useFetchTable";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 import "../TeamPicker/TeamPicker.css";
 import LoadingSpinner from "../Loading/LoadingSpinner";
 
@@ -60,6 +61,7 @@ const TeamPicker = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }
