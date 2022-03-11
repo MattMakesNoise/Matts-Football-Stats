@@ -25,8 +25,8 @@ const TeamBanner = (props) => {
                 <motion.div className="carouselInner" drag="x" dragConstraints={{right: 0, left: -width}}>
                     {teamsFixtures.map((fixture) => {
                         return (
-                            <motion.div className="carouselSlide">
-                                <div className="homeWrap">
+                            <motion.div className="carouselSlide" >
+                                <div className="homeWrap" key={fixture.id}>
                                     <Link to={`/teams/${fixture.teams.home.name}`} className="crestWrap">
                                         <img src={`${fixture.teams.home.logo}`} alt="team crest" className="teamCrest"></img>
                                     </Link>

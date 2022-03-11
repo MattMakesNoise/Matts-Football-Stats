@@ -62,8 +62,8 @@ const Stats = (props) => {
                 <div><strong>Goals for Average</strong>: {teamInfo.response.goals.for.average.total}</div>
                 <div><strong>Goals against Average</strong>: {teamInfo.response.goals.against.average.total}</div>
                 <div><strong>Failed to Score</strong>: {teamInfo.response.failed_to_score.total}</div>
-                <div><strong>Penalties scored</strong>: {teamInfo.response.penalty.scored.total} <span className="percentage">Percentage</span>: {teamInfo.response.penalty.scored.percentage}</div>
-                <div><strong>Penalties missed</strong>: {teamInfo.response.penalty.missed.total} <span className="percentage">Percentage</span>: {teamInfo.response.penalty.missed.percentage}</div>
+                <div className="pens"><div className="pensOne"><strong>Penalties scored</strong>: {teamInfo.response.penalty.scored.total} </div><div className="pensTwo"><span className="percentage">Percentage</span>: {teamInfo.response.penalty.scored.percentage}</div></div>
+                <div className="pens"><div className="pensOne"><strong>Penalties missed</strong>: {teamInfo.response.penalty.missed.total} </div><div className="pensTwo"><span className="percentage">Percentage</span>: {teamInfo.response.penalty.missed.percentage}</div></div>
                 {form && <div><strong>Form</strong>: <span className="form">{form}</span></div>}
             </div>}
         </section>

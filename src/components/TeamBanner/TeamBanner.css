@@ -34,8 +34,15 @@
   border-radius: 5px;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 0 .5rem;
-  padding: .5rem 1rem;
+  margin: 0 .25rem;
+  padding: .5rem .5rem;
+}
+
+@media (min-width: 768px) {
+  .carouselSlide {
+    margin: 0 .5rem;
+    padding: .5rem 1rem;
+  }
 }
 
 @media (min-width: 990px) {
@@ -52,7 +59,7 @@
 
 @media (min-width: 1400px) {
   .carouselSlide {
-    width: 20%;
+    width: 25%;
   }
 }
 
@@ -76,7 +83,7 @@
 }
 
 .crestWrap {
-  padding: 1rem;
+  padding: .5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -86,6 +93,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (min-width: 768px) {
+  .crestWrap {
+    padding: 1rem;
+  }
 }
 
 .crestWrap .teamCrest {
@@ -118,5 +131,6 @@
       -ms-flex-align: center;
           align-items: center;
   margin-left: 1rem;
+  max-width: 50px;
 }
 /*# sourceMappingURL=TeamBanner.css.map */

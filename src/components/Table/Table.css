@@ -61,6 +61,26 @@
   border-bottom: 1px dashed #504F54;
 }
 
+.short {
+  display: block;
+}
+
+@media (min-width: 990px) {
+  .short {
+    display: none;
+  }
+}
+
+.full {
+  display: none;
+}
+
+@media (min-width: 990px) {
+  .full {
+    display: block;
+  }
+}
+
 .position,
 .teamName,
 .played,
@@ -97,7 +117,7 @@
 
 @media (min-width: 990px) {
   .teamName {
-    width: 28%;
+    width: 25%;
   }
 }
 
@@ -116,14 +136,16 @@
 .drawn,
 .lost,
 .goalsFor,
-.goalsAgainst {
+.goalsAgainst,
+.goalDifference {
   display: none;
 }
 
 @media (min-width: 768px) {
   .won,
   .drawn,
-  .lost {
+  .lost,
+  .goalDifference {
     display: block;
   }
 }

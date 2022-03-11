@@ -44,6 +44,19 @@
     }
 }
 
+.short {
+    display: block;
+    @include lg {
+        display: none;
+    }
+}
+.full {
+    display: none;
+    @include lg {
+        display: block;
+    }
+}
+
 .position,
 .teamName,
 .played,
@@ -69,7 +82,7 @@
 .teamName {
     width: 35%;
     @include lg {
-        width: 28%;
+        width: 25%;
     }
 }
 .played,
@@ -87,13 +100,15 @@
 .drawn,
 .lost,
 .goalsFor,
-.goalsAgainst {
+.goalsAgainst,
+.goalDifference {
     display: none;
 }
 
 .won,
 .drawn,
-.lost {
+.lost,
+.goalDifference {
     @include md {
         display: block;
     }

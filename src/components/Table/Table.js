@@ -9,8 +9,10 @@ const Table = (props) => {
         <div className="table">
             <div className="tableHead">
                 <div className="position"><strong>Pos</strong></div>
-                <div className="teamName"><strong>Team Name</strong></div>
-                <div className="played"><strong>Played</strong></div>
+                <div className="teamName short"><strong>Team</strong></div>
+                <div className="teamName full"><strong>Team Name</strong></div>
+                <div className="played short"><strong>P</strong></div>
+                <div className="played full"><strong>Played</strong></div>
                 <div className="won"><strong>W</strong></div>
                 <div className="drawn"><strong>D</strong></div>
                 <div className="lost"><strong>L</strong></div>

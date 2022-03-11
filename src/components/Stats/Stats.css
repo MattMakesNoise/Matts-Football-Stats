@@ -21,6 +21,7 @@
   .statsWrapper {
     width: 50%;
     margin: 1rem 0 1rem 1rem;
+    padding: .5rem;
   }
 }
 
@@ -46,6 +47,12 @@
   margin-bottom: 2rem;
 }
 
+@media (min-width: 1200px) {
+  .statsWrapper .teamInfo {
+    margin-bottom: 1rem;
+  }
+}
+
 .crestFounded {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -64,6 +71,12 @@
   width: 25%;
   height: auto;
   margin-bottom: 1rem;
+}
+
+@media (min-width: 1200px) {
+  .crestFounded img {
+    margin-bottom: .5rem;
+  }
 }
 
 .crestFounded h3 {
@@ -95,8 +108,20 @@
   margin-bottom: 1rem;
 }
 
+@media (min-width: 1200px) {
+  .stadiumWrapper h3 {
+    margin-bottom: .5rem;
+  }
+}
+
 .stadiumWrapper p {
   margin-bottom: .75rem;
+}
+
+@media (min-width: 1200px) {
+  .stadiumWrapper p {
+    margin-bottom: .5rem;
+  }
 }
 
 .stadiumWrapper .stadium {
@@ -125,6 +150,12 @@
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 1rem;
+}
+
+@media (min-width: 1200px) {
+  .stadiumWrapper .stadiumImage {
+    margin-top: 0;
+  }
 }
 
 .stadiumWrapper .stadiumImage img {
@@ -156,9 +187,34 @@
   margin-bottom: .5rem;
 }
 
+.teamStats .pens {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .teamStats .pens {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
 .teamStats .percentage {
-  margin-left: 1rem;
+  margin-left: .5rem;
   font-style: italic;
+}
+
+@media (min-width: 485px) {
+  .teamStats .percentage {
+    margin-left: 1rem;
+  }
 }
 
 .teamStats .form {
